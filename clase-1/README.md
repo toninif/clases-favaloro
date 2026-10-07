@@ -25,3 +25,9 @@ Los enlaces de la última diapositiva apuntan a los PDF de la carpeta superior. 
 ## Imprimir
 
 Usar la impresión del navegador, con orientación horizontal y gráficos de fondo activados. El CSS de impresión muestra todas las diapositivas sin controles ni notas docentes.
+
+## Descargar y publicar
+
+El botón **Descargar PDF** guarda `clase-1-diapositivas.pdf`, con una diapositiva por página y sin notas docentes. Para que funcione online, subir ese PDF junto con `index.html`, `style.css`, `presentation.js` y `assets/`, manteniendo la misma estructura de carpetas.
+
+Si cambia el contenido de la clase, volver a generar el PDF con la impresión del navegador (guardar como PDF, sin encabezados ni pies del navegador, con gráficos de fondo y el tamaño de página definido por el CSS) y reemplazar el archivo publicado.
