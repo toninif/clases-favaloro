@@ -1,0 +1,79 @@
+.question-gap { margin-top:30px; }
+.reading-guide h2 { margin-bottom:26px; }
+.reading-guide .reading { margin-bottom:20px; }
+.reading-range { font-size:24px; margin-bottom:26px; color:var(--accent-text); }
+.reading-guide h3 { font-size:28px; margin-bottom:14px; }
+.reading-questions { margin:0; padding-left:32px; }
+.reading-questions li { font-size:25px; line-height:1.35; padding:9px 0 9px 8px; }
+@media screen and (max-width:700px) {
+ .reading-range { font-size:20px; }
+ .reading-guide h3 { font-size:24px; }
+ .reading-questions li { font-size:21px; }
+}
+.concrete-slide h2 { margin-bottom:26px; }
+.concrete-slide .example { margin-top:18px; padding:20px 24px; }
+.concrete-slide .example strong { margin-top:12px; }
+.concrete-slide .explanation { font-size:27px; margin-top:22px; }
+.concrete-slide .lead { font-size:31px; margin-bottom:18px; }
+.rules-example .process-diagram { margin:26px 0; }
+.rules-example .process-diagram > div { min-height:166px; padding:22px; }
+.rules-example .process-diagram strong { font-size:29px; margin-bottom:14px; }
+.rules-example .process-diagram div > span { font-size:25px; }
+.concrete-slide .takeaway { margin-top:26px; padding-top:20px; }
+.theories-example .split { margin-top:28px; }
+.theories-example .approach-label { font-size:24px; color:var(--accent-text); margin-bottom:16px; }
+.theories-example .approach-label + p { margin-top:0; font-size:27px; }
+.theories-example .split h3 { margin-bottom:12px; }
+.theories-example .name-model { margin-bottom:12px; }
+@media screen and (max-width:700px) {
+ .theories-example .approach-label { font-size:20px; }
+ .theories-example .approach-label + p { font-size:21px; }
+}
+.name-model { gap:14px; }
+.name-model span { font-size:29px; padding:12px 20px; }
+@media screen and (max-width:700px) {
+ .concrete-slide .explanation { font-size:21px; }
+ .concrete-slide .lead { font-size:24px; }
+ .rules-example .process-diagram > div { min-height:0; }
+ .rules-example .process-diagram strong { font-size:25px; }
+ .rules-example .process-diagram div > span { font-size:21px; }
+ .name-model { gap:8px; flex-wrap:wrap; }
+ .name-model span { font-size:22px; padding:8px 10px; }
+}
+.inference { font-size:39px; line-height:1.3; padding:20px 30px; background:var(--pale); margin-bottom:22px; width:270px; }
+.inference hr { border:0; border-top:2px solid var(--accent); margin:12px 0; }
+.violation { background:#fff1d2 !important; font-weight:600; }
+.cards { display:flex; gap:28px; justify-content:center; margin:32px 0; }
+.cards > span { display:flex; flex-direction:column; align-items:center; justify-content:center; width:174px; min-height:145px; border:3px solid var(--accent); background:var(--surface); font-size:65px; font-weight:600; padding:15px; }
+.cards small { font-size:23px; font-weight:400; margin-top:15px; text-align:center; }
+.word-cards > span { font-size:28px; width:255px; }
+.answer-cards > span { width:260px; }
+.category-chain { display:flex; gap:35px; align-items:center; justify-content:center; margin-top:30px; font-size:44px; }
+.category-chain span { padding:10px 35px; background:var(--pale); }
+.answer { margin-top:24px; }
+.slide .question { font-size:32px; }
+.slide[data-title="La atmósfera de las premisas"] .lead { font-size:30px; margin-bottom:20px; }
+.slide[data-title="La atmósfera de las premisas"] h2 { margin-bottom:24px; }
+.slide[data-title="La atmósfera de las premisas"] .example { margin-top:20px; padding:16px 24px; }
+.slide[data-title="La atmósfera de las premisas"] .example strong { margin-top:8px; }
+.slide[data-title="La atmósfera de las premisas"] .answer { padding:16px 24px; margin-top:18px; }
+.slide[data-title="La atmósfera de las premisas"] .answer p { font-size:24px; margin-top:10px; }
+.slide[data-title="Misma relación, otro contenido"] .cards { margin:24px 0; }
+.slide[data-title="Misma relación, otro contenido"] .cards > span { min-height:110px; }
+.slide[data-title="Misma relación, otro contenido"] .takeaway { margin-top:24px; padding-top:18px; }
+@media screen and (max-width:700px) {
+.cards { gap:12px; flex-wrap:wrap; margin:26px 0; }
+.cards > span { width:calc(50% - 8px); min-height:110px; font-size:42px; }
+.word-cards > span { font-size:20px; overflow-wrap:anywhere; }
+.cards small { font-size:17px; }
+.inference { font-size:30px; width:100%; }
+.category-chain { gap:12px; font-size:30px; }
+.category-chain span { padding:8px 18px; }
+.slide .question { font-size:24px; }
+.activity-questions li { font-size:22px; padding:8px 0; }
+}
+.slide-exercise { font-size:22px; font-weight:600; padding:8px 18px; margin-bottom:6px; border:2px solid var(--accent); background:var(--white); color:var(--accent-text); text-decoration:none; }
+.slide-exercise:hover { background:var(--pale); }
+@media screen and (max-width:700px) { .slide-exercise { font-size:17px; padding:8px 14px; margin-bottom:0; } }
+@media print { .answer > :not(summary) { display:block !important; } .answer summary { display:none; } .answer { margin-top:18px; } .slide-exercise { display:none; } }
+
