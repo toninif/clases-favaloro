@@ -1,0 +1,291 @@
+/* Ajustes propios de la clase 3. El diseño base está en style.css. */
+.cover h1 { font-size: 70px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.question-gap { margin-top: 30px; }
+.slide .question { font-size: 32px; }
+.answer { margin-top: 24px; }
+
+/* Diapositivas con actividad y respuesta desplegable: menos aire vertical. */
+.compact h2 { margin-bottom: 22px; }
+.compact .activity-time { margin-bottom: 18px; }
+.compact .example { margin-top: 14px; }
+.compact .answer { margin-top: 16px; }
+.compact .answer p { margin-top: 10px; }
+
+/* Filas teóricas más densas. */
+.compact-rows > div { padding: 16px 0; gap: 30px; }
+.compact-rows h3 { font-size: 28px; }
+.compact-rows p { font-size: 26px; line-height: 1.38; }
+.wide-head > div { grid-template-columns: 250px 1fr; }
+
+.heuristic-map .map-root { width: 400px; }
+.heuristic-map h3 small { display: block; font-size: 21px; font-weight: 400; color: var(--muted); margin-top: 6px; }
+
+/* Tres juicios: tarjetas ilustradas, cada una con su explicación. Al abrirla, el dibujo cambia. */
+.judgment-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin: 30px 0 0; padding: 0; list-style: none; counter-reset: judgment; }
+.judgment-cards > li { position: relative; display: flex; flex-direction: column; padding: 24px 20px 18px; background: white; border: 1px solid var(--line); border-top: 6px solid var(--accent); counter-increment: judgment; }
+.judgment-cards > li::before { content: counter(judgment); position: absolute; top: -22px; left: 18px; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--ink); color: white; font-size: 21px; font-weight: 650; }
+.judgment-art { display: block; width: 100%; height: auto; margin-bottom: 12px; }
+.judgment-question { flex: 1; font-size: 22px; line-height: 1.36; }
+.judgment-cards .answer { margin-top: 14px; padding: 10px 16px; }
+.judgment-cards .answer summary { font-size: 20px; }
+.judgment-cards .answer p { margin-top: 8px; font-size: 19px; line-height: 1.36; }
+
+.judgment-art text { font-size: 16px; fill: var(--muted); text-anchor: middle; }
+.judgment-art text.start { text-anchor: start; }
+.judgment-art text.end { text-anchor: end; }
+.judgment-art .art-after { opacity: 0; transition: opacity .45s ease; }
+.judgment-art .art-before, .judgment-art .past { transition: opacity .45s ease; }
+.judgment-cards > li:has(details[open]) .art-after { opacity: 1; }
+.judgment-cards > li:has(details[open]) .art-before { opacity: 0; }
+.judgment-cards > li:has(details[open]) .past { opacity: .3; }
+
+.coin-art .coin-body { fill: var(--highlight); stroke: var(--highlight-text); stroke-width: 2.5; }
+.coin-art .eye { fill: var(--highlight-text); }
+.coin-art .coin path { fill: none; stroke: var(--highlight-text); stroke-width: 2.6; stroke-linecap: round; }
+.coin-art .brace { fill: none; stroke: var(--muted); stroke-width: 2; }
+.coin-art .mystery { fill: white; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 6 5; }
+.coin-art text.q { font-size: 30px; font-weight: 650; fill: var(--accent-text); dominant-baseline: central; }
+.coin-art text.half { font-size: 23px; font-weight: 650; fill: var(--ink); text-anchor: start; dominant-baseline: central; }
+
+.weather-art .cloud { fill: #e4eaf0; stroke: var(--muted); stroke-width: 2.5; stroke-linejoin: round; }
+.weather-art .storm .cloud { fill: #aab6c3; stroke: var(--ink); }
+.weather-art .drops { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+.weather-art .bolt { fill: var(--highlight); stroke: var(--highlight-text); stroke-width: 1.5; stroke-linejoin: round; }
+.weather-art .set-all { fill: var(--pale); stroke: var(--accent); stroke-width: 2.5; }
+.weather-art .set-both { fill: #fff1d2; stroke: var(--highlight-text); stroke-width: 2.5; }
+.weather-art text.label { font-size: 17px; fill: var(--ink); }
+.weather-art text.vs { font-size: 22px; font-weight: 650; fill: var(--accent-text); }
+
+.trend-art .axis { fill: none; stroke: var(--muted); stroke-width: 2; stroke-linejoin: round; }
+.trend-art .band { fill: var(--pale); }
+.trend-art .mean { stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 7 6; }
+.trend-art text.habitual { fill: var(--accent-text); font-weight: 650; }
+.trend-art .series { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; }
+.trend-art .rise { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-dasharray: 3 6; stroke-linecap: round; }
+.trend-art .low { fill: var(--highlight); stroke: var(--highlight-text); stroke-width: 2; }
+.trend-art .later { fill: var(--accent); stroke: var(--accent-text); stroke-width: 2; }
+
+@keyframes coin-flip { 0%, 50%, 100% { transform: scaleX(1); } 62% { transform: scaleX(.06); } 75% { transform: scaleX(1); } 87% { transform: scaleX(.06); } }
+@keyframes bolt-flash { 0%, 87%, 91%, 95% { opacity: 1; } 89%, 93% { opacity: .2; } }
+@media (prefers-reduced-motion: no-preference) {
+  .coin-art .spin { transform-box: fill-box; transform-origin: center; animation: coin-flip 2.8s ease-in-out infinite; }
+  .weather-art .bolt { animation: bolt-flash 4s linear infinite; }
+}
+
+/* Tabla de contingencia. */
+.contingency { max-width: 920px; font-size: 26px; }
+.contingency th, .contingency td { padding: 14px 22px; }
+.contingency td { text-align: center; font-variant-numeric: tabular-nums; }
+.contingency thead th:first-child { background: var(--ink); }
+.contingency tbody th { width: auto; }
+.slide:has(details[open]) .cell-a { background: #fff1d2; font-weight: 650; }
+
+.tight-diagram { margin: 28px 0; }
+.tight-diagram > div { min-height: 140px; padding: 24px 22px; }
+
+/* Torre de Hanoi interactiva. */
+.hanoi { display: grid; grid-template-columns: 1fr 390px; gap: 40px; align-items: start; margin-top: 8px; }
+.hanoi-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; background: var(--surface); border: 1px solid var(--line); padding: 18px 18px 8px; }
+.hanoi-peg { position: relative; height: 270px; border: 2px solid transparent; border-radius: 6px; background: transparent; padding: 0; }
+.hanoi-peg:hover { background: var(--pale); }
+.hanoi-peg[aria-pressed="true"] { border-color: var(--accent); background: var(--pale); }
+.hanoi-peg::before { content: ""; position: absolute; left: 50%; bottom: 44px; width: 12px; height: 190px; margin-left: -6px; background: var(--muted); border-radius: 6px 6px 0 0; }
+.hanoi-peg::after { content: ""; position: absolute; left: 6%; right: 6%; bottom: 34px; height: 12px; background: var(--ink); border-radius: 3px; }
+.peg-label { position: absolute; left: 0; right: 0; bottom: 2px; font-size: 24px; font-weight: 650; color: var(--accent-text); }
+.disc { position: absolute; left: 50%; z-index: 1; bottom: calc(46px + var(--level) * 42px); width: calc(52px + var(--size) * 54px); height: 38px; transform: translateX(-50%); border-radius: 19px; transition: transform .15s ease; }
+.disc[data-size="1"] { background: var(--highlight); }
+.disc[data-size="2"] { background: var(--accent); }
+.disc[data-size="3"] { background: var(--ink); }
+.disc.lifted { transform: translate(-50%, -24px); box-shadow: 0 0 0 4px white, 0 0 0 7px var(--accent); }
+.hanoi-side p { font-size: 25px; line-height: 1.4; }
+.hanoi-status { min-height: 106px; }
+.hanoi-count { margin-top: 12px !important; color: var(--accent-text); }
+.hanoi-count output { font-variant-numeric: tabular-nums; font-weight: 650; }
+.hanoi-reset { margin-top: 14px; border: 2px solid var(--accent); background: white; color: var(--accent-text); font-size: 21px; padding: 8px 18px; }
+.hanoi-reset:hover { background: var(--pale); }
+.hanoi-side .answer { margin-top: 18px; }
+
+/* Árboles de búsqueda. */
+.search-layout { display: grid; grid-template-columns: 1fr 470px; gap: 48px; align-items: center; }
+.search-layout .theory-rows > div { grid-template-columns: 1fr; gap: 6px; }
+.search-trees svg { display: block; width: 100%; height: auto; }
+.search-trees line { stroke: var(--accent); stroke-width: 2.5; }
+.search-trees circle { fill: var(--pale); stroke: var(--accent); stroke-width: 2.5; }
+.search-trees circle.start { fill: var(--ink); stroke: var(--ink); }
+.search-trees text { font-size: 19px; font-weight: 650; fill: var(--ink); text-anchor: middle; dominant-baseline: central; }
+.search-trees text.on-dark { fill: white; }
+.search-trees text.tree-label { font-size: 18px; font-weight: 600; fill: var(--accent-text); }
+.search-trees figcaption { text-align: center; }
+
+.compact-route li { padding: 20px 0; }
+
+.problem-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 34px; }
+.problem-cards p { margin: 0; padding: 24px 26px; background: var(--pale); font-size: 30px; font-weight: 600; }
+.problem-cards strong { color: var(--accent-text); margin-right: 10px; }
+
+.problem-split { gap: 56px; }
+.problem-split > div + div { padding-left: 40px; }
+.problem-text { margin-top: 0; }
+.problem-text p, .problem-text strong { font-size: 26px; line-height: 1.42; }
+.problem-split .answer { margin-top: 0; }
+/* A. Los lirios: estanques hacia atrás desde el día 60. */
+.lily-answer { display: grid; grid-template-columns: 1fr 600px; gap: 36px; align-items: center; }
+.lily-art { display: block; width: 100%; height: auto; }
+.lily-art .pond { fill: #d3e7ee; }
+.lily-art .pond-edge { fill: none; stroke: var(--accent); stroke-width: 2; }
+.lily-art .lily-bg { fill: #a9d08f; }
+.lily-art .lily-pad { fill: #5e9b55; }
+.lily-art .lily-dot { fill: #3f7d3a; }
+.lily-art .lily-ring { fill: none; stroke: var(--highlight-text); stroke-width: 2; }
+.lily-art .back-arrow { fill: none; stroke: var(--highlight-text); stroke-width: 2.5; }
+.lily-art .arrow-head { fill: var(--highlight-text); }
+.lily-art text { font-size: 17px; fill: var(--muted); text-anchor: middle; }
+.lily-art text.day { font-weight: 650; fill: var(--ink); }
+.lily-art text.answer-day { font-weight: 650; fill: var(--highlight-text); }
+.lily-art text.step-label { font-size: 15px; fill: var(--highlight-text); }
+.lily-art .lily-flower { fill: white; stroke: var(--highlight); stroke-width: 2; }
+.lily-art .dots circle { fill: var(--muted); }
+
+/* B. Hobbits y orcos: orillas después de cada viaje. */
+.crossings { margin: 6px 0 0; padding-left: 36px; }
+.crossings li { font-size: 22px; line-height: 1.32; padding: 1px 0 1px 4px; }
+.crossings .detour { color: var(--highlight-text); font-weight: 650; }
+.trip { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.ferry { display: flex; flex: none; align-items: center; gap: 6px; }
+.bank { display: grid; grid-template-rows: 11px 11px; row-gap: 3px; width: 41px; }
+.bank > span { display: flex; gap: 4px; }
+.bank.left > span { justify-content: flex-end; }
+.ferry i, .ferry-legend i { display: block; width: 11px; height: 11px; }
+.ferry i.h, .ferry-legend i.h { background: var(--highlight); border-radius: 50%; }
+.ferry i.o, .ferry-legend i.o { background: var(--accent); border-radius: 2px; }
+.ferry i.new, .ferry-legend i.new { box-shadow: 0 0 0 1.5px white, 0 0 0 3px var(--ink); }
+.river { position: relative; width: 56px; height: 25px; background: #d3e7ee; border-radius: 4px; }
+.river::before { content: "→"; position: absolute; inset: 0 0 7px; display: grid; place-items: center; font-size: 16px; font-weight: 650; line-height: 1; color: var(--accent-text); }
+.river.back::before { content: "←"; }
+.river::after { content: ""; position: absolute; right: 4px; bottom: 3px; width: 16px; height: 6px; background: var(--ink); clip-path: polygon(0 0, 100% 0, 78% 100%, 22% 100%); }
+.river.back::after { right: auto; left: 4px; }
+.detour .river { background: #fff1d2; }
+.detour .river::before { color: var(--highlight-text); }
+.compact .answer .ferry-legend { display: flex; justify-content: flex-end; gap: 18px; margin-top: 8px; font-size: 16px; color: var(--muted); }
+.ferry-legend span { display: flex; align-items: center; gap: 7px; }
+
+/* C. La enciclopedia: al abrir la solución, aparecen las páginas y el túnel de la polilla. */
+.shelf-art { display: block; width: 100%; height: auto; margin-top: 18px; }
+.shelf-art .shelf { fill: var(--ink); }
+.shelf-art .book-body { fill: var(--pale); stroke: var(--accent); stroke-width: 2; }
+.shelf-art .book-cover { fill: var(--accent); }
+.shelf-art .book-band { stroke: var(--highlight); stroke-width: 2.5; }
+.shelf-art text { text-anchor: middle; }
+.shelf-art text.start { text-anchor: start; }
+.shelf-art text.end { text-anchor: end; }
+.shelf-art .tomo { font-size: 15px; fill: var(--muted); }
+.shelf-art .num { font-size: 32px; font-weight: 650; fill: var(--accent-text); }
+.shelf-art .dim { fill: none; stroke: var(--ink); stroke-width: 2; }
+.shelf-art .dim-label { font-size: 18px; font-weight: 650; fill: var(--ink); }
+.shelf-art .page-mark { fill: var(--highlight-text); }
+.shelf-art .page-label { font-size: 15px; font-weight: 650; fill: var(--highlight-text); }
+.shelf-art .tunnel { fill: var(--highlight); opacity: .8; }
+.shelf-art .worm { fill: #84b562; stroke: #3f6e2c; stroke-width: 1.5; }
+.shelf-art .worm-eye { fill: var(--ink); }
+.shelf-art .worm-antenna { fill: none; stroke: #3f6e2c; stroke-width: 1.8; stroke-linecap: round; }
+.shelf-art .art-after { opacity: 0; transition: opacity .45s ease; }
+.slide:has(details[open]) .shelf-art .art-after { opacity: 1; }
+
+@keyframes pond-in { from { opacity: 0; } }
+@keyframes dig { from { transform: scaleX(0); } }
+@keyframes crawl { from { transform: translateX(-252px); } }
+@media (prefers-reduced-motion: no-preference) {
+  .lily-art .pond-step { animation: pond-in .45s ease both; animation-delay: calc(var(--i) * .45s); }
+  .slide:has(details[open]) .shelf-art .tunnel-run { transform-box: fill-box; transform-origin: left center; animation: dig 2s ease-in-out both; }
+  .slide:has(details[open]) .shelf-art .worm-run { animation: crawl 2s ease-in-out both; }
+}
+
+.story { margin-top: 0; }
+.story p, .story strong { font-size: 29px; line-height: 1.45; }
+
+.tumor-text p, .tumor-text strong { font-size: 25px; line-height: 1.4; }
+.tumor-answers { display: grid; grid-template-columns: 0.8fr 1.6fr; gap: 24px; align-items: start; }
+.tumor-solution { display: flex; gap: 26px; align-items: center; margin-top: 12px; }
+.tumor-solution svg { flex: 0 0 190px; width: 190px; height: auto; }
+.tumor-solution p { margin: 0 !important; }
+.tumor-solution .body { fill: white; stroke: var(--muted); stroke-width: 2; }
+.tumor-solution .tumor { fill: var(--highlight); stroke: var(--highlight-text); stroke-width: 2; }
+.tumor-solution .ray { stroke: var(--accent); stroke-width: 3; }
+.tumor-solution .ray-head { fill: var(--accent); }
+
+.steps-list { margin: 0; padding-left: 34px; }
+.steps-list li { padding: 6px 0 6px 6px; }
+
+.magic-split { align-items: start; }
+.magic-square { display: grid; grid-template-columns: repeat(3, 76px); gap: 8px; margin: 16px 0 6px; }
+.magic-square span { display: grid; place-items: center; height: 76px; background: white; border: 2px solid var(--accent); font-size: 34px; font-weight: 650; }
+
+/* Guía de lectura (como en la clase 2). */
+.reading-guide h2 { margin-bottom: 24px; }
+.reading-guide .reading { margin-bottom: 14px; }
+.reading-guide .reading p { font-size: 22px; line-height: 1.4; }
+.reading-guide .reading p + p { margin-top: 10px; }
+.reading-range { font-size: 22px; line-height: 1.4; margin-bottom: 22px; color: var(--accent-text); }
+.reading-range a { font-size: 22px; margin-left: 8px; }
+.reading-guide h3 { font-size: 27px; margin-bottom: 10px; }
+.reading-questions { margin: 0; padding-left: 32px; }
+.reading-questions li { font-size: 24px; line-height: 1.35; padding: 7px 0 7px 8px; }
+
+@media screen and (max-width: 700px) {
+  .cover h1 { font-size: clamp(34px, 9vw, 52px); }
+  .slide .question { font-size: 24px; }
+  .compact-rows > div, .wide-head > div { grid-template-columns: 1fr; gap: 10px; }
+  .compact-rows h3 { font-size: 24px; }
+  .compact-rows p { font-size: 21px; }
+  .heuristic-map .map-root { width: 100%; }
+  .heuristic-map h3 small { font-size: 18px; }
+  .judgment-cards { grid-template-columns: 1fr; gap: 34px; margin-top: 30px; }
+  .judgment-cards > li { padding: 24px 16px 16px; }
+  .judgment-art { max-width: 360px; }
+  .judgment-question { font-size: 20px; }
+  .judgment-cards .answer summary, .judgment-cards .answer p { font-size: 18px; }
+  .contingency { font-size: 17px; }
+  .contingency th, .contingency td { padding: 10px 8px; }
+  .hanoi { grid-template-columns: 1fr; gap: 20px; }
+  .hanoi-board { gap: 6px; padding: 12px 8px 6px; }
+  .hanoi-peg { height: 190px; }
+  .hanoi-peg::before { height: 120px; bottom: 40px; width: 9px; margin-left: -4px; }
+  .hanoi-peg::after { bottom: 30px; height: 10px; }
+  .peg-label { font-size: 19px; }
+  .disc { bottom: calc(40px + var(--level) * 28px); width: calc(26px + var(--size) * 22px); height: 26px; }
+  .hanoi-side p { font-size: 20px; }
+  .hanoi-status { min-height: 0; }
+  .hanoi-reset { font-size: 18px; }
+  .search-layout { grid-template-columns: 1fr; gap: 24px; }
+  .problem-cards { grid-template-columns: 1fr; gap: 12px; }
+  .problem-cards p { font-size: 22px; padding: 16px 18px; }
+  .problem-text p, .problem-text strong, .story p, .story strong, .tumor-text p, .tumor-text strong { font-size: 21px; }
+  .crossings li { font-size: 19px; }
+  .trip { flex-wrap: wrap; row-gap: 4px; }
+  .lily-answer { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .lily-scroll { overflow-x: auto; }
+  .lily-scroll .lily-art { width: 540px; max-width: none; }
+  .tumor-answers { grid-template-columns: 1fr; }
+  .tumor-solution { flex-direction: column; align-items: start; }
+  .magic-square { grid-template-columns: repeat(3, 58px); }
+  .magic-square span { height: 58px; font-size: 26px; }
+  .reading-range, .reading-guide .reading p { font-size: 19px; }
+  .reading-guide h3 { font-size: 23px; }
+  .reading-questions li { font-size: 20px; }
+}
+
+@media print {
+  .answer > :not(summary) { display: block !important; }
+  .answer summary { display: none; }
+  .answer { margin-top: 16px; }
+  .hanoi-reset { display: none; }
+  .disc.lifted { transform: translateX(-50%); box-shadow: none; }
+  .judgment-cards .answer { margin-top: 14px; }
+  .judgment-art .art-after { opacity: 1; }
+  .judgment-art .art-before { opacity: 0; }
+  .coin-art .past { opacity: .3; }
+  .judgment-art *, .lily-art *, .shelf-art * { animation: none !important; transition: none !important; }
+  .shelf-art .art-after { opacity: 1; }
+  .answer > .lily-answer { display: grid !important; }
+}
