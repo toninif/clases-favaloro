@@ -1,0 +1,1213 @@
+<title>Laboratorio psicométrico</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mini-batería de cinco subpruebas para la clase de inteligencia de Psicología General.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,500..650&display=swap">
+<style>
+:root {
+  /* Layout: una sola columna de hasta 1080px, aspecto de hoja de registro: fondo claro, filetes finos y un único acento verde apagado. Tema claro fijo. */
+  --bg: #f6f6f4;
+  --card: #ffffff;
+  --surface: #eeefec;
+  --ink: #1e2421;
+  --ink-2: #4f5853;
+  --muted: #7a827d;
+  --accent: #2f5d50;
+  --accent-wash: #e5ede9;
+  --line: #d9dcd8;
+  --grid: #ebedea;
+  --bad: #9b3b2e;
+  --on-accent: #ffffff;
+  --f-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-sans: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --scale: 1;
+  --radius: 6px;
+  color-scheme: light;
+}
+html { font-size: calc(100% * var(--scale)); }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-sans); font-size: 1.0625rem; line-height: 1.5; }
+.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.stripe-ink { fill: var(--ink); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Encabezado */
+.masthead { background: var(--card); border-bottom: 1px solid var(--line); }
+.masthead .wrap { padding-block: 1.25rem 1.1rem; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 2rem; }
+.eyebrow { font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 .3rem; }
+h1 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.5rem); line-height: 1.1; margin: 0; text-wrap: balance; }
+.scaler { display: flex; align-items: center; gap: .4rem; font-size: .85rem; color: var(--ink-2); }
+.scaler button { font: inherit; font-weight: 600; width: 2.2rem; height: 2.1rem; border-radius: 4px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+.scaler button:hover { border-color: var(--ink-2); }
+#scale-out { min-width: 3em; text-align: center; font-variant-numeric: tabular-nums; }
+
+/* Contenido */
+main .wrap { padding-block: 2rem 3.5rem; }
+.panel { display: grid; gap: 1.5rem; scroll-margin-top: 1rem; }
+.panel-head { max-width: 68ch; }
+h2 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem); line-height: 1.2; margin: 0 0 .5rem; text-wrap: balance; }
+h3 { font-family: var(--f-sans); font-weight: 700; font-size: 1.05rem; line-height: 1.25; margin: 0; text-wrap: balance; }
+.lede { color: var(--ink-2); margin: 0; max-width: 66ch; }
+.kicker { font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.note { color: var(--ink-2); font-size: .95rem; margin: 0; max-width: 72ch; }
+.note strong { color: var(--ink); }
+
+.fig { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; display: grid; gap: .6rem; align-content: start; min-width: 0; }
+.fig-title { font-weight: 700; font-size: 1rem; margin: 0; }
+.fig-sub { color: var(--ink-2); font-size: .9rem; margin: 0; }
+.chart { width: 100%; min-width: 0; }
+.chart svg { display: block; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 1rem; }
+
+.btn { font: inherit; font-weight: 600; padding: .6rem 1.1rem; border-radius: 4px; border: 1px solid transparent; cursor: pointer; line-height: 1.2; }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { background: var(--ink); }
+.btn.ghost { background: var(--card); color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--ink-2); }
+.btn.sm { padding: .42rem .85rem; font-size: .92rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 1rem 1.25rem; }
+.stat { border-top: 1px solid var(--line); padding-top: .55rem; min-width: 0; }
+.stat-label { margin: 0; font-size: .85rem; color: var(--ink-2); }
+.stat-value { margin: .1rem 0 0; font-weight: 700; font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem); line-height: 1.15; }
+.stat-note { margin: .15rem 0 0; font-size: .82rem; color: var(--muted); }
+.callout { margin: 0; padding: .7rem .9rem; border-radius: var(--radius); background: var(--surface); font-size: .95rem; color: var(--ink); max-width: 80ch; }
+
+/* Hoja de perfil */
+.protocol { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: .5rem 1.25rem; margin: 0; padding: .8rem 1rem; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.protocol div { min-width: 0; }
+.protocol dt { font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.protocol dd { margin: .1rem 0 0; font-weight: 600; }
+.tree { display: grid; }
+.g-node { justify-self: center; width: min(100%, 540px); display: flex; align-items: center; gap: 1rem; background: var(--card); border: 1px solid var(--ink-2); border-radius: var(--radius); padding: .8rem 1.1rem; }
+.g-mark { font-family: var(--f-serif); font-style: italic; font-weight: 600; font-size: 2.6rem; line-height: 1; width: 2.6rem; text-align: center; flex: none; color: var(--accent); }
+.g-body { flex: 1; min-width: 0; }
+.g-title { margin: 0; font-weight: 700; font-size: 1.05rem; }
+.g-text { margin: .1rem 0 0; font-size: .9rem; color: var(--ink-2); }
+.g-score { text-align: right; flex: none; }
+.g-ci { display: block; font-weight: 700; font-size: 2rem; line-height: 1; }
+.g-ci-label { font-size: .75rem; color: var(--muted); }
+.stem { height: 18px; width: 1px; background: var(--ink-2); justify-self: center; }
+.factors { list-style: none; margin: 0; padding: 18px 0 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; position: relative; }
+.factors::before { content: ""; position: absolute; top: 0; left: calc((100% - 48px) / 10); right: calc((100% - 48px) / 10); border-top: 1px solid var(--ink-2); }
+.factor { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: .85rem; display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
+.factor::before { content: ""; position: absolute; top: -19px; left: 50%; height: 18px; border-left: 1px solid var(--ink-2); }
+.factor.is-done { border-color: var(--accent); }
+.factor-code { margin: 0; font-size: .78rem; font-weight: 600; color: var(--muted); }
+.factor-task { margin: 0; color: var(--ink-2); font-size: .9rem; }
+.factor-status { margin: .15rem 0 .4rem; font-size: .88rem; color: var(--ink-2); }
+.factor .btn { align-self: flex-start; margin-top: auto; }
+.pill { display: inline-block; font-size: .78rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px; background: var(--accent-wash); color: var(--accent); }
+.pill.empty { background: var(--surface); color: var(--muted); font-weight: 400; }
+@media (max-width: 860px) {
+  .factors { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-top: 0; }
+  .factors::before, .factor::before, .stem { display: none; }
+  .g-node { margin-bottom: 12px; }
+}
+@media (max-width: 480px) {
+  .factors { grid-template-columns: 1fr; }
+  .g-mark { font-size: 2.2rem; width: 2.2rem; }
+}
+
+/* Aplicación de subpruebas */
+.runner { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; display: grid; gap: 1rem; }
+.run-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: .75rem 1rem; }
+.run-title { font-family: var(--f-serif); font-weight: 600; font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem); margin-top: .15rem; }
+.run-meta { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.run-prog { font-size: .9rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.run-bar { height: 3px; background: var(--grid); border-radius: 2px; overflow: hidden; }
+.run-bar span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s; }
+.run-body { min-height: 18rem; display: grid; align-content: start; gap: 1rem; }
+.intro { display: grid; gap: 1rem; max-width: 64ch; }
+.intro-text { font-size: 1.12rem; margin: 0; }
+.intro-measures { margin: 0; color: var(--ink-2); }
+.modes { border: 1px solid var(--line); border-radius: var(--radius); padding: .6rem .9rem .8rem; display: grid; gap: .4rem; margin: 0; }
+.modes legend { font-size: .85rem; color: var(--ink-2); padding: 0 .3rem; }
+.radio { display: flex; gap: .55rem; align-items: baseline; cursor: pointer; }
+.radio input { accent-color: var(--accent); }
+
+.mx-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; align-items: center; }
+.mx-stem { display: grid; justify-items: center; }
+.mx-grid { width: 100%; max-width: 380px; height: auto; }
+.mx-frame { fill: var(--bg); stroke: var(--line); stroke-width: 1.5; }
+.mx-missing { fill: var(--card); stroke: var(--muted); stroke-dasharray: 5 4; }
+.mx-missing.hot { fill: var(--accent-wash); stroke: var(--accent); stroke-width: 3; stroke-dasharray: none; }
+.mx-missing.placed { fill: var(--accent-wash); stroke: var(--accent); stroke-width: 2; stroke-dasharray: none; }
+.mx-q { fill: var(--muted); font-family: var(--f-serif); font-size: 44px; font-weight: 600; }
+.mx-opts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; max-width: 420px; width: 100%; justify-self: center; }
+.mx-opt { position: relative; aspect-ratio: 1; max-width: 100%; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: .35rem; cursor: grab; color: var(--ink); touch-action: none; user-select: none; -webkit-user-select: none; }
+.mx-opt:hover { border-color: var(--accent); }
+.mx-opt:active { cursor: grabbing; }
+.mx-opt.is-dragging { opacity: .35; }
+.mx-opt svg { display: block; width: 100%; height: 100%; }
+.mx-ghost { position: fixed; left: 0; top: 0; z-index: 60; pointer-events: none; box-sizing: border-box; background: var(--card); border: 1px solid var(--accent); border-radius: var(--radius); padding: .35rem; box-shadow: 0 8px 24px rgb(30 36 33 / .18); }
+.mx-ghost svg { display: block; width: 100%; height: 100%; }
+.mx-hint { margin: 0; text-align: center; color: var(--muted); font-size: .9rem; }
+.opt-key { position: absolute; top: .2rem; left: .4rem; font-size: .72rem; color: var(--muted); }
+.mk { stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
+.mk-solid { fill: var(--ink); }
+.mk-empty { fill: none; }
+.mk-hand { stroke: var(--ink); stroke-width: 5; stroke-linecap: round; fill: none; }
+.mk-tick { stroke: var(--muted); stroke-width: 2; fill: none; }
+.mk-line { stroke: var(--ink); stroke-width: 4; stroke-linecap: round; fill: none; }
+@media (max-width: 760px) { .mx-wrap { grid-template-columns: 1fr; } }
+
+.series { font-weight: 600; font-variant-numeric: tabular-nums; font-size: clamp(1.7rem, 1rem + 3.2vw, 3rem); letter-spacing: .02em; text-align: center; margin: 1.5rem 0 .5rem; overflow-wrap: anywhere; }
+.series .q { color: var(--accent); }
+.answer-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
+.answer-input { font: inherit; font-size: 1.5rem; font-variant-numeric: tabular-nums; width: 8ch; text-align: center; padding: .4rem .6rem; border-radius: 4px; border: 1px solid var(--ink-2); background: var(--card); color: var(--ink); }
+.answer-input:focus { border-color: var(--accent); outline: 2px solid var(--accent-wash); }
+.choice-q { font-family: var(--f-serif); font-weight: 600; font-size: clamp(1.3rem, 1rem + 1.4vw, 1.9rem); margin: 1rem 0 .5rem; text-wrap: balance; }
+.choice-opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: .75rem; }
+.choice-opt { font: inherit; font-size: 1.08rem; text-align: left; display: flex; gap: .75rem; align-items: baseline; padding: .85rem 1rem; border-radius: var(--radius); border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+.choice-opt:hover { border-color: var(--accent); background: var(--accent-wash); }
+.choice-opt .opt-n { font-size: .8rem; color: var(--muted); }
+
+.rot-stage { width: 100%; max-width: 680px; justify-self: center; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); }
+.rot-stage svg { display: block; width: 100%; height: auto; }
+.poly { fill: var(--accent); }
+.rot-fix { fill: var(--ink-2); font-family: var(--f-sans); font-size: 34px; }
+.rot-divider { stroke: var(--line); stroke-width: 1.5; }
+.rot-msg { fill: var(--ink-2); font-family: var(--f-sans); font-size: 16px; }
+.rot-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; max-width: 680px; width: 100%; justify-self: center; }
+.rot-buttons .btn { font-size: 1.08rem; padding: .85rem; }
+kbd { font-family: var(--f-sans); font-size: .8em; border: 1px solid currentColor; border-radius: 3px; padding: 0 .3em; opacity: .75; }
+.feedback { text-align: center; min-height: 1.6em; margin: 0; font-weight: 600; }
+.feedback.ok { color: var(--accent); }
+.feedback.bad { color: var(--bad); }
+
+.span-display { font-weight: 600; font-variant-numeric: tabular-nums; font-size: clamp(4.5rem, 2rem + 12vw, 9rem); line-height: 1; text-align: center; min-height: 1.15em; margin: 1rem 0 0; color: var(--ink); }
+.span-status { text-align: center; color: var(--ink-2); margin: 0; min-height: 1.5em; }
+
+.result { display: grid; gap: 1.25rem; }
+.review { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; max-width: 80ch; }
+.review li { display: grid; grid-template-columns: 1.5rem 1fr; gap: .4rem; align-items: baseline; font-size: .95rem; }
+.review .mark { font-weight: 700; text-align: center; }
+.review li.ok .mark { color: var(--accent); }
+.review li.bad .mark { color: var(--bad); }
+.review .rule { color: var(--ink-2); }
+
+.table-wrap { overflow-x: auto; }
+.tbl { border-collapse: collapse; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.tbl th, .tbl td { padding: .35rem .6rem; text-align: left; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+.tbl th { color: var(--ink-2); font-weight: 600; }
+
+/* Gráficos SVG */
+.ax-line { stroke: var(--line); stroke-width: 1; }
+.gridline { stroke: var(--grid); stroke-width: 1; }
+.ax-text { fill: var(--ink-2); font-family: var(--f-sans); font-size: .74rem; font-variant-numeric: tabular-nums; }
+.ax-small { font-size: .66rem; fill: var(--muted); }
+.ax-title { fill: var(--ink-2); font-family: var(--f-sans); font-size: .82rem; }
+.lbl { fill: var(--ink); font-family: var(--f-sans); font-size: .85rem; font-weight: 700; }
+.band { fill: var(--accent-wash); }
+.area { fill: var(--accent); fill-opacity: .07; }
+.area-strong { fill: var(--accent); fill-opacity: .22; }
+.line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.marker { stroke: var(--ink); stroke-width: 1.5; }
+.dot { fill: var(--accent); stroke: var(--card); stroke-width: 2; }
+.ci-band { stroke: var(--ink); stroke-width: 1.5; fill: none; }
+
+#tip { position: fixed; left: 0; top: 0; z-index: 50; pointer-events: none; background: var(--ink); color: var(--card); font-size: .8rem; line-height: 1.35; padding: .4rem .6rem; border-radius: 4px; max-width: 260px; white-space: pre-line; }
+.foot .wrap { padding-block: 0 2rem; font-size: .85rem; color: var(--muted); }
+.foot p { margin: 0; max-width: 80ch; border-top: 1px solid var(--line); padding-top: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="mx-stripes" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)">
+      <rect class="stripe-ink" x="0" y="0" width="2.6" height="7"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="masthead">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Psicología General · ¿Qué es la inteligencia?</p>
+      <h1>Laboratorio psicométrico</h1>
+    </div>
+    <div class="scaler" role="group" aria-label="Tamaño del texto para proyectar">
+      <span>Texto</span>
+      <button type="button" id="scale-down" aria-label="Achicar el texto">A−</button>
+      <span id="scale-out">100%</span>
+      <button type="button" id="scale-up" aria-label="Agrandar el texto">A+</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="panel" id="bateria" aria-labelledby="bateria-title">
+      <div class="panel-head">
+        <p class="kicker">Enfoque psicométrico</p>
+        <h2 id="bateria-title">Mini-batería: un factor general y cinco factores específicos</h2>
+        <p class="lede">Cada tarjeta es una subprueba breve basada en tareas clásicas, una por cada factor del modelo jerárquico. Con dos o más subpruebas aplicadas aparece un CI de demostración.</p>
+      </div>
+
+      <div id="hub" class="panel">
+        <dl class="protocol">
+          <div><dt>Protocolo</dt><dd>Mini-batería de demostración</dd></div>
+          <div><dt>Fecha</dt><dd id="proto-date">—</dd></div>
+          <div><dt>Normas</dt><dd>Ficticias, solo para la clase</dd></div>
+          <div><dt>Subpruebas aplicadas</dt><dd id="proto-count">0 de 5</dd></div>
+        </dl>
+
+        <div class="tree">
+          <div class="g-node">
+            <div class="g-mark" aria-hidden="true">g</div>
+            <div class="g-body">
+              <p class="g-title">Factor general</p>
+              <p class="g-text" id="g-text">Aplicá al menos dos subpruebas para estimarlo.</p>
+            </div>
+            <div class="g-score" id="g-score" hidden>
+              <span class="g-ci" id="g-ci">—</span>
+              <span class="g-ci-label">CI de demostración</span>
+            </div>
+          </div>
+          <div class="stem" aria-hidden="true"></div>
+          <ul class="factors" id="factor-list"></ul>
+        </div>
+
+        <div class="grid-2">
+          <figure class="fig">
+            <p class="fig-title">Perfil de puntajes escalares</p>
+            <p class="fig-sub">Cada subprueba se convierte a una escala de media 10 y desvío 3. La franja marca el rango promedio.</p>
+            <div class="chart" id="ch-profile"></div>
+          </figure>
+          <figure class="fig">
+            <p class="fig-title">Ubicación en la curva</p>
+            <p class="fig-sub">El CI combina las subpruebas en una escala de media 100 y desvío 15. La línea horizontal es el intervalo de confianza del 95%.</p>
+            <div class="chart" id="ch-composite"></div>
+          </figure>
+        </div>
+
+        <div class="actions">
+          <button class="btn ghost sm" type="button" id="reset-results">Borrar resultados</button>
+        </div>
+        <p class="note"><strong>Esto no es un test de CI.</strong> Las normas son inventadas y cada subprueba tiene muy pocos ítems, así que el número no dice nada sobre tu inteligencia. Sirve para ver el procedimiento: puntaje bruto → comparación con un grupo normativo → puntaje escalar → puntaje compuesto.</p>
+      </div>
+
+      <div id="runner" class="runner" hidden></div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Psicología General · Demo de clase. Las normas de la batería son ficticias y los resultados quedan guardados solo en este navegador.</p>
+  </div>
+</footer>
+
+<div id="tip" role="tooltip" hidden></div>
+
+<script>
+(() => {
+'use strict';
+
+/* ================= Utilidades ================= */
+const $ = (s, r = document) => r.querySelector(s);
+const NS = 'http://www.w3.org/2000/svg';
+function S(tag, attrs, parent) {
+  const el = document.createElementNS(NS, tag);
+  if (attrs) for (const k in attrs) if (attrs[k] != null) el.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(el);
+  return el;
+}
+function T(parent, x, y, str, attrs) {
+  const t = S('text', Object.assign({ x: r1(x), y: r1(y) }, attrs || {}), parent);
+  t.textContent = str;
+  return t;
+}
+function H(tag, attrs, kids) {
+  const el = document.createElement(tag);
+  if (attrs) for (const k in attrs) {
+    const v = attrs[k];
+    if (v == null || v === false) continue;
+    if (k === 'class') el.className = v;
+    else if (k === 'text') el.textContent = v;
+    else if (k.slice(0, 2) === 'on' && typeof v === 'function') el.addEventListener(k.slice(2), v);
+    else el.setAttribute(k, v === true ? '' : v);
+  }
+  if (kids != null) for (const c of [].concat(kids)) if (c != null && c !== false) el.append(c);
+  return el;
+}
+const r1 = v => Math.round(v * 10) / 10;
+const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+const remPx = () => parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+const NF = [0, 1, 2].map(d => new Intl.NumberFormat('es-AR', { minimumFractionDigits: d, maximumFractionDigits: d }));
+const nf = (x, d = 0) => NF[d].format(x);
+const pctf = (p, d = 0) => nf(p * 100, d) + '%';
+const mmss = ms => { const s = Math.round(ms / 1000); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+
+function rng32(a) {
+  return function () {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function shuffled(arr, r = Math.random) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
+  return a;
+}
+function erf(x) {
+  const s = x < 0 ? -1 : 1; x = Math.abs(x);
+  const t = 1 / (1 + 0.3275911 * x);
+  const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+  return s * y;
+}
+const Phi = z => 0.5 * (1 + erf(z / Math.SQRT2));
+const phi = z => Math.exp(-0.5 * z * z) / Math.sqrt(2 * Math.PI);
+function niceTicks(lo, hi, n = 5) {
+  const step0 = (hi - lo) / n;
+  const mag = Math.pow(10, Math.floor(Math.log10(step0)));
+  const e = step0 / mag;
+  const step = (e >= 7.5 ? 10 : e >= 3.5 ? 5 : e >= 1.5 ? 2 : 1) * mag;
+  const out = [];
+  for (let v = Math.ceil(lo / step - 1e-9) * step; v <= hi + 1e-9; v += step) out.push(Math.round(v * 1e6) / 1e6);
+  return out;
+}
+function bellD(X, Y, mean, sd, a, b, closed) {
+  const n = 140; let d = '';
+  for (let i = 0; i <= n; i++) {
+    const v = a + (b - a) * i / n;
+    d += (i ? 'L' : 'M') + r1(X(v)) + ',' + r1(Y(phi((v - mean) / sd) / sd));
+  }
+  if (closed) d += `L${r1(X(b))},${r1(Y(0))}L${r1(X(a))},${r1(Y(0))}Z`;
+  return d;
+}
+function anchorFor(x, lo, hi, pad = 40) { return x < lo + pad ? 'start' : x > hi - pad ? 'end' : 'middle'; }
+function newSvg(w, h, label) { return S('svg', { width: w, height: h, viewBox: `0 0 ${w} ${h}`, role: 'img', 'aria-label': label }); }
+
+/* ---------- Gráficos que se redibujan al cambiar el ancho ---------- */
+const charts = new Set();
+function registerChart(el, draw) {
+  const rec = { el, draw, w: 0, raf: 0 };
+  rec.redraw = () => { const w = Math.floor(el.clientWidth); rec.w = w; if (w > 0) draw(w); };
+  rec.ro = new ResizeObserver(() => {
+    if (rec.raf) return;
+    rec.raf = requestAnimationFrame(() => {
+      rec.raf = 0;
+      const w = Math.floor(el.clientWidth);
+      if (w > 0 && w !== rec.w) { rec.w = w; draw(w); }
+    });
+  });
+  rec.ro.observe(el);
+  el._chart = rec;
+  charts.add(rec);
+  return rec;
+}
+function redraw(el) { if (el && el._chart) el._chart.redraw(); }
+function redrawAll() {
+  for (const rec of charts) {
+    if (!rec.el.isConnected) { rec.ro.disconnect(); charts.delete(rec); continue; }
+    rec.redraw();
+  }
+}
+
+/* ---------- Tooltip ---------- */
+const tip = $('#tip');
+function placeTip(e) {
+  const pad = 14; const r = tip.getBoundingClientRect();
+  let x = e.clientX + pad, y = e.clientY + pad;
+  if (x + r.width > innerWidth - 8) x = e.clientX - r.width - pad;
+  if (y + r.height > innerHeight - 8) y = e.clientY - r.height - pad;
+  tip.style.transform = `translate(${Math.max(4, x)}px, ${Math.max(4, y)}px)`;
+}
+document.addEventListener('pointerover', e => {
+  const t = e.target.closest && e.target.closest('[data-tip]');
+  if (!t) return;
+  tip.textContent = t.getAttribute('data-tip');
+  tip.hidden = false; placeTip(e);
+});
+document.addEventListener('pointermove', e => { if (!tip.hidden) placeTip(e); });
+document.addEventListener('pointerout', e => {
+  const t = e.target.closest && e.target.closest('[data-tip]');
+  if (t && !(e.relatedTarget && t.contains(e.relatedTarget))) tip.hidden = true;
+});
+addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
+
+/* ---------- Tamaño de texto (para proyectar) ---------- */
+const SCALES = [0.9, 1, 1.15, 1.3, 1.5];
+let scaleIdx = 1;
+try { const v = parseFloat(localStorage.getItem('labpsi-scale')); if (SCALES.includes(v)) scaleIdx = SCALES.indexOf(v); } catch (e) {}
+function applyScale() {
+  document.documentElement.style.setProperty('--scale', SCALES[scaleIdx]);
+  $('#scale-out').textContent = Math.round(SCALES[scaleIdx] * 100) + '%';
+  try { localStorage.setItem('labpsi-scale', String(SCALES[scaleIdx])); } catch (e) {}
+  requestAnimationFrame(redrawAll);
+}
+$('#scale-down').addEventListener('click', () => { scaleIdx = Math.max(0, scaleIdx - 1); applyScale(); });
+$('#scale-up').addEventListener('click', () => { scaleIdx = Math.min(SCALES.length - 1, scaleIdx + 1); applyScale(); });
+
+/* ================= Batería ================= */
+const STORE_KEY = 'labpsi-v1';
+let store = {};
+try { store = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch (e) { store = {}; }
+if (!store.results || typeof store.results !== 'object') store.results = {};
+function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) {} }
+
+const SUBTESTS = [
+  { key: 'gf', code: 'Gf', factor: 'Razonamiento fluido', short: 'Fluido', task: 'Matrices',
+    measures: 'Resolver problemas nuevos sin apoyarse en lo aprendido: descubrir la regla y completar la forma faltante.',
+    instructions: 'En cada matriz falta la figura de abajo a la derecha. Mirá cómo cambian las figuras a lo largo de las filas y de las columnas, y arrastrá hasta el signo de pregunta la opción que completa el patrón. También podés tocarla o usar las teclas 1 a 6.',
+    norm: { m: 3.6, s: 1.5 } },
+  { key: 'gq', code: 'Gq', factor: 'Razonamiento cuantitativo', short: 'Cuantitativo', task: 'Series numéricas',
+    measures: 'Operar con cantidades y predecir el valor que sigue.',
+    instructions: 'Escribí el número que continúa cada serie y apretá Enter. Si no lo encontrás, tocá «No sé» y seguí.',
+    norm: { m: 3.8, s: 1.5 } },
+  { key: 'gc', code: 'Gc', factor: 'Conocimiento', short: 'Conocimiento', task: 'Vocabulario e información',
+    measures: 'Cultura general y definiciones: lo aprendido en la escuela y en el propio entorno.',
+    instructions: 'Elegí la respuesta correcta. Podés usar las teclas 1 a 4.',
+    norm: { m: 3.5, s: 1.4 } },
+  { key: 'gv', code: 'Gv', factor: 'Procesamiento visoespacial', short: 'Visoespacial', task: 'Rotación mental',
+    measures: 'Representar figuras e imaginarlas giradas, como en las pruebas de cubos y matrices visuales.',
+    instructions: 'Vas a ver dos figuras. La de la derecha está girada. Decidí si es la misma figura o su imagen en espejo. Respondé rápido y sin errores: medimos el tiempo de cada respuesta. Teclas: F = igual, J = espejada. Empezás con dos ensayos de práctica.',
+    norm: { m: 13.5, s: 2 } },
+  { key: 'gwm', code: 'Gwm', factor: 'Memoria de trabajo', short: 'Memoria', task: 'Retención de dígitos',
+    measures: 'Mantener y manipular información durante unos segundos.',
+    instructions: 'Vas a ver una serie de dígitos, de a uno por vez. Cuando termine, escribila. Empieza con 3 dígitos y suma uno cada dos series. La prueba termina cuando fallás las dos series del mismo largo.',
+    norm: { m: 6.4, s: 1.2 } },
+];
+const SUB = Object.fromEntries(SUBTESTS.map(s => [s.key, s]));
+const AVG_R = 0.45;     // correlación media entre subpruebas (como en humanos)
+const REL_DEMO = 0.70;  // confiabilidad supuesta de esta mini-batería
+
+function normOf(key, mode) {
+  if (key === 'gwm') return mode === 'inverso' ? { m: 4.9, s: 1.2 } : { m: 6.4, s: 1.2 };
+  return SUB[key].norm;
+}
+function scoreOf(key) {
+  const r = store.results[key];
+  if (!r || typeof r.raw !== 'number') return null;
+  const n = normOf(key, r.mode);
+  const esc = clamp(Math.round(10 + 3 * (r.raw - n.m) / n.s), 1, 19);
+  const z = (esc - 10) / 3;
+  return { raw: r.raw, max: r.max, mode: r.mode, esc, z, pct: Phi(z) };
+}
+function composite() {
+  const ks = SUBTESTS.map(s => s.key).filter(k => scoreOf(k));
+  if (ks.length < 2) return null;
+  const k = ks.length;
+  const sum = ks.reduce((a, key) => a + scoreOf(key).z, 0);
+  const zc = sum / Math.sqrt(k + k * (k - 1) * AVG_R);
+  const ci = clamp(Math.round(100 + 15 * zc), 40, 160);
+  const sem = 15 * Math.sqrt(1 - REL_DEMO);
+  return { ci, k, pct: Phi((ci - 100) / 15), lo: Math.round(ci - 1.96 * sem), hi: Math.round(ci + 1.96 * sem) };
+}
+const pctNum = p => clamp(Math.round(p * 100), 1, 99);
+
+/* ---------- Ítems: matrices ---------- */
+const SHAPES_ALL = ['circle', 'square', 'triangle', 'diamond'];
+const FILLS_ALL = ['empty', 'striped', 'solid'];
+const sc3 = (shape, count, fill) => ({ kind: 'shapes', shape, count, fill });
+const MX_DEFS = [
+  { rule: 'La fila define la forma y la columna, la cantidad.',
+    cell: (r, c) => sc3(['circle', 'square', 'triangle'][r], c + 1, 'solid') },
+  { rule: 'La aguja gira 45° en cada paso hacia la derecha, y cada fila arranca 90° más adelante.',
+    cell: (r, c) => ({ kind: 'clock', angle: (r * 90 + c * 45) % 360 }),
+    distract: a => [a.angle + 45, a.angle - 45, a.angle + 90, a.angle + 180, a.angle - 90].map(x => ({ kind: 'clock', angle: ((x % 360) + 360) % 360 })) },
+  { rule: 'Cada forma aparece una vez por fila y por columna; la columna define el relleno.',
+    cell: (r, c) => sc3(['diamond', 'square', 'circle'][(r + c) % 3], 2, ['empty', 'striped', 'solid'][c]) },
+  { rule: 'La forma y la cantidad aparecen una sola vez en cada fila y en cada columna.',
+    cell: (r, c) => sc3(['square', 'circle', 'triangle'][(r + c) % 3], [1, 2, 3][(r + 2 * c + 1) % 3], 'striped') },
+  { rule: 'Forma, cantidad y relleno: cada valor aparece una sola vez por fila y por columna.',
+    cell: (r, c) => sc3(['circle', 'triangle', 'diamond'][(r + c) % 3], [1, 2, 3][(r + 2 * c) % 3], ['empty', 'striped', 'solid'][(2 * r + c) % 3]) },
+  { rule: 'La tercera columna conserva solo las líneas que aparecen en una de las dos primeras: las repetidas se cancelan.',
+    cell: (r, c) => {
+      const A = [['h', 'a'], ['o', 'v'], ['a', 'b', 's']][r];
+      const B = [['h', 'v'], ['v', 'b'], ['b', 'h']][r];
+      if (c === 0) return { kind: 'lines', set: A };
+      if (c === 1) return { kind: 'lines', set: B };
+      return { kind: 'lines', set: A.filter(x => !B.includes(x)).concat(B.filter(x => !A.includes(x))) };
+    },
+    distract: () => [['a', 'b', 's', 'h'], ['b'], ['a', 'b', 's'], ['a', 's'], ['a', 's', 'h', 'o']].map(set => ({ kind: 'lines', set })) },
+];
+function specKey(s) { return s.kind === 'lines' ? 'L:' + s.set.slice().sort().join('') : JSON.stringify(s); }
+function shapeDistractors(def, ans, rnd) {
+  const used = { shape: new Set(), count: new Set(), fill: new Set() };
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) {
+    if (r === 2 && c === 2) continue;
+    const s = def.cell(r, c); used.shape.add(s.shape); used.count.add(s.count); used.fill.add(s.fill);
+  }
+  const singles = [];
+  for (const v of SHAPES_ALL) if (v !== ans.shape) singles.push(sc3(v, ans.count, ans.fill));
+  for (const v of [1, 2, 3]) if (v !== ans.count) singles.push(sc3(ans.shape, v, ans.fill));
+  for (const v of FILLS_ALL) if (v !== ans.fill) singles.push(sc3(ans.shape, ans.count, v));
+  const plausible = singles.filter(s => used.shape.has(s.shape) && used.count.has(s.count) && used.fill.has(s.fill));
+  const neighbors = [def.cell(2, 1), def.cell(1, 2), def.cell(2, 0), def.cell(0, 2)];
+  const seen = new Set([specKey(ans)]); const out = [];
+  const take = s => { const k = specKey(s); if (out.length < 5 && !seen.has(k)) { seen.add(k); out.push(s); } };
+  shuffled(plausible, rnd).slice(0, 3).forEach(take);
+  shuffled(neighbors, rnd).forEach(take);
+  shuffled(plausible, rnd).forEach(take);
+  shuffled(singles, rnd).forEach(take);
+  return out;
+}
+const MATRICES = MX_DEFS.map((def, i) => {
+  const rnd = rng32(1000 + i * 17);
+  const ans = def.cell(2, 2);
+  const ds = def.distract ? def.distract(ans) : shapeDistractors(def, ans, rnd);
+  const options = shuffled([ans].concat(ds), rnd);
+  return { rule: def.rule, cell: def.cell, options, answer: options.findIndex(o => specKey(o) === specKey(ans)) };
+});
+
+const LAYOUT = {
+  1: [[50, 50, 24]],
+  2: [[29, 50, 16], [71, 50, 16]],
+  3: [[50, 29, 13.5], [28, 69, 13.5], [72, 69, 13.5]],
+};
+function drawShape(p, shape, cx, cy, s, fill) {
+  const attrs = { class: 'mk ' + (fill === 'solid' ? 'mk-solid' : 'mk-empty') };
+  if (fill === 'striped') { attrs.class = 'mk'; attrs.fill = 'url(#mx-stripes)'; }
+  if (shape === 'circle') return S('circle', Object.assign({ cx, cy, r: s }, attrs), p);
+  if (shape === 'square') return S('rect', Object.assign({ x: cx - s * 0.9, y: cy - s * 0.9, width: s * 1.8, height: s * 1.8 }, attrs), p);
+  if (shape === 'triangle') return S('polygon', Object.assign({ points: `${cx},${cy - s * 1.1} ${cx + s * 1.05},${cy + s * 0.75} ${cx - s * 1.05},${cy + s * 0.75}` }, attrs), p);
+  return S('polygon', Object.assign({ points: `${cx},${cy - s * 1.2} ${cx + s},${cy} ${cx},${cy + s * 1.2} ${cx - s},${cy}` }, attrs), p);
+}
+const LINE_D = { h: 'M12 50H88', v: 'M50 12V88', a: 'M12 12L88 88', b: 'M88 12L12 88' };
+function drawCell(p, spec) {
+  if (spec.kind === 'shapes') {
+    for (const [x, y, s] of LAYOUT[spec.count]) drawShape(p, spec.shape, x, y, s, spec.fill);
+  } else if (spec.kind === 'clock') {
+    S('circle', { cx: 50, cy: 50, r: 36, class: 'mk mk-empty' }, p);
+    for (const a of [0, 90, 180, 270]) {
+      const sx = Math.sin(a * Math.PI / 180), cy = -Math.cos(a * Math.PI / 180);
+      S('line', { x1: 50 + 30 * sx, y1: 50 + 30 * cy, x2: 50 + 36 * sx, y2: 50 + 36 * cy, class: 'mk-tick' }, p);
+    }
+    const t = spec.angle * Math.PI / 180;
+    const x = 50 + 27 * Math.sin(t), y = 50 - 27 * Math.cos(t);
+    S('line', { x1: 50, y1: 50, x2: r1(x), y2: r1(y), class: 'mk-hand' }, p);
+    S('circle', { cx: r1(x), cy: r1(y), r: 6, class: 'mk mk-solid' }, p);
+    S('circle', { cx: 50, cy: 50, r: 4, class: 'mk mk-solid' }, p);
+  } else if (spec.kind === 'lines') {
+    S('rect', { x: 12, y: 12, width: 76, height: 76, class: 'mk mk-empty' }, p);
+    for (const k of spec.set) {
+      if (LINE_D[k]) S('path', { d: LINE_D[k], class: 'mk-line' }, p);
+      else if (k === 'o') S('circle', { cx: 50, cy: 50, r: 17, class: 'mk-line' }, p);
+      else if (k === 's') S('rect', { x: 33, y: 33, width: 34, height: 34, class: 'mk-line' }, p);
+    }
+  }
+}
+
+/* ---------- Ítems: series, conocimiento, rotación ---------- */
+const SERIES = [
+  { seq: [3, 6, 9, 12], ans: 15, rule: 'Sumar 3.' },
+  { seq: [2, 4, 8, 16], ans: 32, rule: 'Multiplicar por 2.' },
+  { seq: [3, 5, 4, 6, 5, 7], ans: 6, rule: 'Alternar +2 y −1.' },
+  { seq: [1, 4, 9, 16, 25], ans: 36, rule: 'Cuadrados: 1², 2², 3², 4², 5², 6².' },
+  { seq: [1, 1, 2, 3, 5, 8], ans: 13, rule: 'Cada número es la suma de los dos anteriores (Fibonacci).' },
+  { seq: [2, 3, 5, 9, 17], ans: 33, rule: 'Las diferencias se duplican: +1, +2, +4, +8, +16.' },
+];
+const KNOW = [
+  { q: '¿Qué significa «efímero»?', opts: ['Que dura poco tiempo', 'Que es muy antiguo', 'Que se repite', 'Que es transparente'], a: 0 },
+  { q: '¿Cuál es la capital de Australia?', opts: ['Sídney', 'Melbourne', 'Canberra', 'Perth'], a: 2 },
+  { q: '¿Qué significa «ubicuo»?', opts: ['Que está bien ubicado', 'Que está presente en todas partes', 'Que es único en su tipo', 'Que se mueve sin parar'], a: 1 },
+  { q: '¿Quién propuso la teoría de las inteligencias múltiples?', opts: ['Charles Spearman', 'Alfred Binet', 'Jean Piaget', 'Howard Gardner'], a: 3 },
+  { q: '¿Qué significa «conspicuo»?', opts: ['Sospechoso', 'Que conspira', 'Ilustre, que sobresale', 'Que pasa inadvertido'], a: 2 },
+  { q: '¿Qué significa «prosapia»?', opts: ['Elegancia al hablar', 'Ascendencia, linaje', 'Prosa poética', 'Soberbia'], a: 1 },
+];
+const POLYS = {
+  F: [[1, 0], [2, 0], [0, 1], [1, 1], [1, 2]],
+  N: [[1, 0], [1, 1], [0, 2], [1, 2], [0, 3]],
+};
+function drawPoly(p, cells, cx, cy, angle, mirror, unit) {
+  const mx = cells.reduce((a, c) => a + c[0], 0) / cells.length + 0.5;
+  const my = cells.reduce((a, c) => a + c[1], 0) / cells.length + 0.5;
+  const g = S('g', { transform: `translate(${cx} ${cy}) rotate(${angle}) scale(${mirror ? -1 : 1} 1)` }, p);
+  for (const [x, y] of cells) S('rect', { x: r1((x - mx) * unit + 1.5), y: r1((y - my) * unit + 1.5), width: unit - 3, height: unit - 3, rx: 2, class: 'poly' }, g);
+}
+
+/* ---------- Sesión de aplicación ---------- */
+const hub = $('#hub'), runner = $('#runner');
+let session = null;
+function newSession() { endSession(); session = { timers: [], cleanups: [], onKey: null }; return session; }
+function endSession() {
+  if (!session) return;
+  const s = session; session = null;
+  s.timers.forEach(clearTimeout);
+  s.cleanups.forEach(fn => { try { fn(); } catch (e) {} });
+}
+function later(fn, ms) {
+  const s = session; if (!s) return;
+  s.timers.push(setTimeout(() => { if (session === s) fn(); }, ms));
+}
+document.addEventListener('keydown', e => {
+  if (!session || !session.onKey || e.metaKey || e.ctrlKey || e.altKey) return;
+  const tag = (e.target && e.target.tagName) || '';
+  if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+  session.onKey(e);
+});
+
+function scrollToPanel() {
+  const top = $('#bateria').getBoundingClientRect().top;
+  if (top < 0) $('#bateria').scrollIntoView({ block: 'start' });
+}
+function openRunner(st) {
+  hub.hidden = true; runner.hidden = false;
+  runner.replaceChildren(
+    H('div', { class: 'run-head' }, [
+      H('div', {}, [H('p', { class: 'kicker', text: `${st.code} · ${st.factor}` }), H('h3', { class: 'run-title', text: st.task })]),
+      H('div', { class: 'run-meta' }, [
+        H('span', { class: 'run-prog', id: 'run-prog' }),
+        H('button', { class: 'btn ghost sm', type: 'button', id: 'run-exit', text: 'Salir a la hoja de perfil', onclick: closeRunner }),
+      ]),
+    ]),
+    H('div', { class: 'run-bar', 'aria-hidden': 'true' }, H('span', { id: 'run-bar-fill' })),
+    H('div', { class: 'run-body', id: 'run-body', 'aria-live': 'polite' })
+  );
+  scrollToPanel();
+}
+function closeRunner() {
+  endSession();
+  runner.hidden = true; runner.replaceChildren(); hub.hidden = false;
+  renderHub();
+  scrollToPanel();
+}
+function setProgress(done, total, text) {
+  const p = $('#run-prog'); if (!p) return;
+  p.textContent = text || `Ítem ${Math.min(done + 1, total)} de ${total}`;
+  $('#run-bar-fill').style.width = (total ? clamp(done / total, 0, 1) * 100 : 0) + '%';
+}
+function startSubtest(key) {
+  const st = SUB[key];
+  openRunner(st);
+  showIntro(st);
+}
+function showIntro(st) {
+  newSession();
+  setProgress(0, 0, 'Instrucciones');
+  const kids = [H('p', { class: 'intro-text', text: st.instructions })];
+  let modes = null;
+  if (st.key === 'gwm') {
+    modes = H('fieldset', { class: 'modes' }, [
+      H('legend', { text: 'Variante' }),
+      H('label', { class: 'radio', for: 'span-mode-d' }, [H('input', { type: 'radio', name: 'span-mode', id: 'span-mode-d', value: 'directo', checked: true }), 'Directo: repetir en el mismo orden']),
+      H('label', { class: 'radio', for: 'span-mode-i' }, [H('input', { type: 'radio', name: 'span-mode', id: 'span-mode-i', value: 'inverso' }), 'Inverso: repetir al revés (exige más memoria de trabajo)']),
+    ]);
+    kids.push(modes);
+  }
+  kids.push(H('p', { class: 'intro-measures' }, [H('strong', { text: 'Qué mide. ' }), st.measures]));
+  const go = H('button', { class: 'btn primary', type: 'button', id: 'run-start', text: 'Comenzar', onclick: () => {
+    const sel = modes && modes.querySelector('input:checked');
+    RUN[st.key](st, sel ? sel.value : 'directo');
+  } });
+  kids.push(H('div', { class: 'actions' }, go));
+  $('#run-body').replaceChildren(H('div', { class: 'intro' }, kids));
+  go.focus({ preventScroll: true });
+}
+
+/* ---------- Aplicadores ---------- */
+const RUN = {
+  gf(st) {
+    const sess = newSession(); const body = $('#run-body');
+    const t0 = performance.now(); const answers = []; let i = 0;
+    let locked = false, missG = null, missRect = null, missQ = null, drag = null;
+    function show() {
+      locked = false;
+      const it = MATRICES[i];
+      setProgress(i, MATRICES.length);
+      const grid = S('svg', { viewBox: '0 0 330 330', class: 'mx-grid', role: 'img', 'aria-label': `Matriz ${i + 1}. Falta la figura de abajo a la derecha.` });
+      for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) {
+        const g = S('g', { transform: `translate(${c * 110 + 5} ${r * 110 + 5})` }, grid);
+        const miss = r === 2 && c === 2;
+        const rect = S('rect', { x: 0, y: 0, width: 100, height: 100, rx: 4, class: miss ? 'mx-frame mx-missing' : 'mx-frame' }, g);
+        if (miss) { missG = g; missRect = rect; missQ = T(g, 50, 65, '?', { class: 'mx-q', 'text-anchor': 'middle' }); }
+        else drawCell(g, it.cell(r, c));
+      }
+      const opts = H('div', { class: 'mx-opts', role: 'group', 'aria-label': 'Opciones de respuesta' }, it.options.map((spec, k) => {
+        const sv = S('svg', { viewBox: '0 0 100 100', 'aria-hidden': 'true' });
+        drawCell(sv, spec);
+        const b = H('button', { class: 'mx-opt', type: 'button', 'aria-label': `Opción ${k + 1}` }, [H('span', { class: 'opt-key', text: String(k + 1) }), sv]);
+        b.addEventListener('click', () => { if (b._dragged) return; place(k); });
+        b.addEventListener('pointerdown', e => startDrag(e, b, k, sv));
+        return b;
+      }));
+      body.replaceChildren(
+        H('div', { class: 'mx-wrap' }, [H('div', { class: 'mx-stem' }, grid), opts]),
+        H('p', { class: 'mx-hint', text: 'Arrastrá una opción hasta el signo de pregunta, o tocala.' })
+      );
+    }
+    function overTarget(x, y) {
+      if (!missRect) return false;
+      const r = missRect.getBoundingClientRect(); const pad = r.width * 0.2;
+      return x >= r.left - pad && x <= r.right + pad && y >= r.top - pad && y <= r.bottom + pad;
+    }
+    function startDrag(e, b, k, sv) {
+      if (locked || drag || e.button > 0) return;
+      drag = { b, k, sv, id: e.pointerId, x0: e.clientX, y0: e.clientY, ghost: null, hot: false };
+      try { b.setPointerCapture(e.pointerId); } catch (err) {}
+    }
+    function moveDrag(e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      if (!drag.ghost) {
+        if (Math.hypot(e.clientX - drag.x0, e.clientY - drag.y0) < 6) return;
+        const r = drag.b.getBoundingClientRect();
+        drag.w = r.width; drag.h = r.height;
+        drag.ghost = H('div', { class: 'mx-ghost', 'aria-hidden': 'true' }, drag.sv.cloneNode(true));
+        drag.ghost.style.width = r.width + 'px'; drag.ghost.style.height = r.height + 'px';
+        document.body.append(drag.ghost);
+        drag.b.classList.add('is-dragging');
+      }
+      e.preventDefault();
+      drag.ghost.style.transform = `translate(${e.clientX - drag.w / 2}px, ${e.clientY - drag.h / 2}px)`;
+      const hot = overTarget(e.clientX, e.clientY);
+      if (hot !== drag.hot) { drag.hot = hot; missRect.classList.toggle('hot', hot); }
+    }
+    function dropGhost() {
+      if (!drag) return;
+      if (drag.ghost) drag.ghost.remove();
+      drag.b.classList.remove('is-dragging');
+      if (missRect) missRect.classList.remove('hot');
+    }
+    function endDrag(e, cancel) {
+      if (!drag || e.pointerId !== drag.id) return;
+      const d = drag;
+      dropGhost(); drag = null;
+      if (!d.ghost) return; // fue un toque: lo resuelve el click
+      d.b._dragged = true; setTimeout(() => { d.b._dragged = false; }, 0);
+      if (!cancel && overTarget(e.clientX, e.clientY)) place(d.k);
+    }
+    const onUp = e => endDrag(e, false), onCancel = e => endDrag(e, true);
+    addEventListener('pointermove', moveDrag, { passive: false });
+    addEventListener('pointerup', onUp);
+    addEventListener('pointercancel', onCancel);
+    sess.cleanups.push(() => {
+      dropGhost(); drag = null;
+      removeEventListener('pointermove', moveDrag, { passive: false });
+      removeEventListener('pointerup', onUp);
+      removeEventListener('pointercancel', onCancel);
+    });
+    function place(k) {
+      if (locked || session !== sess) return;
+      locked = true;
+      if (missQ) missQ.remove();
+      missRect.classList.add('placed');
+      drawCell(S('g', {}, missG), MATRICES[i].options[k]);
+      later(() => choose(k), 450);
+    }
+    function choose(k) {
+      if (session !== sess) return;
+      answers.push({ k, ok: k === MATRICES[i].answer });
+      i++;
+      if (i < MATRICES.length) show();
+      else finishSubtest(st, { raw: answers.filter(a => a.ok).length, max: MATRICES.length, ms: performance.now() - t0, answers });
+    }
+    sess.onKey = e => { const k = parseInt(e.key, 10); if (k >= 1 && k <= 6) { e.preventDefault(); place(k - 1); } };
+    show();
+  },
+
+  gq(st) {
+    const sess = newSession(); const body = $('#run-body');
+    const t0 = performance.now(); const answers = []; let i = 0;
+    function show() {
+      const it = SERIES[i];
+      setProgress(i, SERIES.length);
+      const input = H('input', { class: 'answer-input', id: 'series-answer', type: 'text', inputmode: 'numeric', autocomplete: 'off', 'aria-label': 'Número que sigue' });
+      const form = H('form', { class: 'answer-row' }, [
+        input,
+        H('button', { class: 'btn primary', type: 'submit', id: 'series-ok', text: 'Responder' }),
+        H('button', { class: 'btn ghost', type: 'button', id: 'series-skip', text: 'No sé', onclick: () => answer(null) }),
+      ]);
+      form.addEventListener('submit', e => { e.preventDefault(); const v = input.value.trim(); if (v === '') { input.focus(); return; } answer(v); });
+      body.replaceChildren(
+        H('p', { class: 'series', 'aria-label': 'Serie: ' + it.seq.join(', ') + ', ¿qué número sigue?' }, [it.seq.join(' · ') + ' · ', H('span', { class: 'q', text: '?' })]),
+        form
+      );
+      input.focus({ preventScroll: true });
+    }
+    function answer(v) {
+      if (session !== sess) return;
+      const num = v == null ? null : parseInt(v.replace(/[^\d-]/g, ''), 10);
+      answers.push({ v: num, ok: num === SERIES[i].ans });
+      i++;
+      if (i < SERIES.length) show();
+      else finishSubtest(st, { raw: answers.filter(a => a.ok).length, max: SERIES.length, ms: performance.now() - t0, answers });
+    }
+    show();
+  },
+
+  gc(st) {
+    const sess = newSession(); const body = $('#run-body');
+    const t0 = performance.now(); const answers = []; let i = 0;
+    function show() {
+      const it = KNOW[i];
+      setProgress(i, KNOW.length);
+      body.replaceChildren(
+        H('p', { class: 'choice-q', text: it.q }),
+        H('div', { class: 'choice-opts', role: 'group', 'aria-label': 'Opciones' }, it.opts.map((o, k) =>
+          H('button', { class: 'choice-opt', type: 'button', onclick: () => choose(k) }, [H('span', { class: 'opt-n', text: String(k + 1) }), H('span', { text: o })])))
+      );
+    }
+    function choose(k) {
+      if (session !== sess) return;
+      answers.push({ k, ok: k === KNOW[i].a });
+      i++;
+      if (i < KNOW.length) show();
+      else finishSubtest(st, { raw: answers.filter(a => a.ok).length, max: KNOW.length, ms: performance.now() - t0, answers });
+    }
+    sess.onKey = e => { const k = parseInt(e.key, 10); if (k >= 1 && k <= 4) { e.preventDefault(); choose(k - 1); } };
+    show();
+  },
+
+  gv(st) {
+    const sess = newSession(); const body = $('#run-body');
+    const t0 = performance.now();
+    const practice = [
+      { shape: 'F', theta: 60, dir: 1, base: 0, mirror: false },
+      { shape: 'N', theta: 0, dir: 1, base: 30, mirror: true },
+    ];
+    const list = [];
+    for (const shape of ['F', 'N']) for (const theta of [0, 60, 120, 180]) for (const mirror of [false, true]) list.push({ shape, theta, mirror });
+    const trials = shuffled(list).map(t => Object.assign(t, { dir: Math.random() < 0.5 ? 1 : -1, base: 30 * Math.floor(Math.random() * 12) }));
+    const log = [];
+    let phase = 'practice', idx = 0, onset = 0, waiting = false;
+
+    const svg = S('svg', { viewBox: '0 0 400 200', role: 'img', 'aria-label': 'Dos figuras para comparar' });
+    const stage = H('div', { class: 'rot-stage' }, svg);
+    const fb = H('p', { class: 'feedback', 'aria-live': 'polite' });
+    const bSame = H('button', { class: 'btn primary', type: 'button', id: 'rot-same', onclick: () => respond(false) }, ['Igual ', H('kbd', { text: 'F' })]);
+    const bMirror = H('button', { class: 'btn primary', type: 'button', id: 'rot-mirror', onclick: () => respond(true) }, ['Espejada ', H('kbd', { text: 'J' })]);
+    body.replaceChildren(stage, H('div', { class: 'rot-buttons' }, [bSame, bMirror]), fb);
+
+    const current = () => (phase === 'practice' ? practice : trials)[idx];
+    function fixation() {
+      svg.replaceChildren();
+      S('line', { x1: 200, y1: 20, x2: 200, y2: 180, class: 'rot-divider' }, svg);
+      T(svg, 200, 112, '+', { class: 'rot-fix', 'text-anchor': 'middle' });
+    }
+    function stim(t) {
+      svg.replaceChildren();
+      S('line', { x1: 200, y1: 20, x2: 200, y2: 180, class: 'rot-divider' }, svg);
+      drawPoly(svg, POLYS[t.shape], 100, 100, t.base, false, 28);
+      drawPoly(svg, POLYS[t.shape], 300, 100, t.base + t.dir * t.theta, t.mirror, 28);
+      onset = performance.now(); waiting = true;
+    }
+    function next() {
+      const arr = phase === 'practice' ? practice : trials;
+      if (idx >= arr.length) {
+        if (phase === 'practice') return pause();
+        const ok = log.filter(l => l.ok).length;
+        const byAngle = [0, 60, 120, 180].map(a => {
+          const rows = log.filter(l => l.theta === a);
+          const good = rows.filter(l => l.ok);
+          return { a, n: rows.length, acc: rows.length ? good.length / rows.length : 0, rt: good.length ? good.reduce((s, l) => s + l.rt, 0) / good.length : null };
+        });
+        return finishSubtest(st, { raw: ok, max: trials.length, ms: performance.now() - t0, byAngle });
+      }
+      if (phase === 'test') setProgress(idx, trials.length, `Ensayo ${idx + 1} de ${trials.length}`);
+      else setProgress(0, 0, `Práctica ${idx + 1} de ${practice.length}`);
+      fixation();
+      later(() => stim(current()), 550);
+    }
+    function pause() {
+      waiting = false;
+      svg.replaceChildren();
+      T(svg, 200, 92, 'Terminó la práctica.', { class: 'rot-msg', 'text-anchor': 'middle' });
+      T(svg, 200, 118, 'Ahora vienen 16 ensayos sin aviso de error.', { class: 'rot-msg', 'text-anchor': 'middle' });
+      fb.textContent = ''; fb.className = 'feedback';
+      const cont = H('button', { class: 'btn primary', type: 'button', id: 'rot-continue', text: 'Seguir', onclick: () => { cont.remove(); phase = 'test'; idx = 0; next(); } });
+      fb.replaceChildren(cont);
+      cont.focus({ preventScroll: true });
+    }
+    function respond(saysMirror) {
+      if (!waiting || session !== sess) return;
+      waiting = false;
+      const rt = performance.now() - onset;
+      const t = current();
+      const ok = saysMirror === t.mirror;
+      if (phase === 'practice') {
+        fb.className = 'feedback ' + (ok ? 'ok' : 'bad');
+        fb.textContent = ok ? 'Correcto' : (t.mirror ? 'Incorrecto: era la imagen en espejo' : 'Incorrecto: era la misma figura, girada');
+        later(() => { fb.textContent = ''; idx++; next(); }, 1100);
+      } else {
+        log.push({ theta: t.theta, mirror: t.mirror, ok, rt });
+        idx++; next();
+      }
+    }
+    sess.onKey = e => {
+      const k = e.key.toLowerCase();
+      if (k === 'f' || k === 'arrowleft') { e.preventDefault(); respond(false); }
+      else if (k === 'j' || k === 'arrowright') { e.preventDefault(); respond(true); }
+    };
+    next();
+  },
+
+  gwm(st, mode) {
+    const sess = newSession(); const body = $('#run-body');
+    const t0 = performance.now();
+    const inverse = mode === 'inverso';
+    let len = 3, tIn = 0, okIn = 0, best = 0, seq = [];
+    const log = [];
+    const display = H('p', { class: 'span-display', 'aria-live': 'off', text: ' ' });
+    const status = H('p', { class: 'span-status', 'aria-live': 'polite' });
+    const input = H('input', { class: 'answer-input', id: 'span-answer', type: 'text', inputmode: 'numeric', autocomplete: 'off', 'aria-label': 'Serie de dígitos', style: 'width: 12ch' });
+    const form = H('form', { class: 'answer-row', hidden: true }, [input, H('button', { class: 'btn primary', type: 'submit', id: 'span-ok', text: 'Responder' })]);
+    form.addEventListener('submit', e => { e.preventDefault(); check(); });
+    body.replaceChildren(display, status, form);
+
+    function gen(n) { const out = []; while (out.length < n) { const d = 1 + Math.floor(Math.random() * 9); if (d !== out[out.length - 1]) out.push(d); } return out; }
+    function trial() {
+      setProgress(0, 0, `Serie de ${len} dígitos · intento ${tIn + 1} de 2`);
+      display.textContent = ' ';
+      status.textContent = `Atención: ${len} dígitos`;
+      later(present, 1100);
+    }
+    function present() {
+      seq = gen(len); status.textContent = '';
+      let i = 0;
+      const step = () => {
+        if (i >= seq.length) return ask();
+        display.textContent = String(seq[i++]);
+        later(() => { display.textContent = ' '; later(step, 250); }, 800);
+      };
+      step();
+    }
+    function ask() {
+      status.textContent = inverse ? 'Escribí la serie al revés' : 'Escribí la serie en el mismo orden';
+      form.hidden = false; input.value = ''; input.focus({ preventScroll: true });
+    }
+    function check() {
+      if (session !== sess || form.hidden) return;
+      const resp = input.value.replace(/\D/g, '');
+      if (!resp) { input.focus(); return; }
+      const expected = (inverse ? seq.slice().reverse() : seq).join('');
+      const ok = resp === expected;
+      log.push({ len, seq: seq.join(''), resp, ok });
+      if (ok) { okIn++; best = Math.max(best, len); }
+      tIn++; form.hidden = true; input.blur();
+      status.textContent = 'Respuesta registrada';
+      if (tIn === 2) {
+        if (okIn === 0 || len === 10) return later(() => finishSubtest(st, { raw: best, max: 10, ms: performance.now() - t0, mode, log }), 500);
+        len++; tIn = 0; okIn = 0;
+      }
+      later(trial, 700);
+    }
+    trial();
+  },
+};
+
+/* ---------- Resultados ---------- */
+function finishSubtest(st, res) {
+  endSession();
+  store.results[st.key] = { raw: res.raw, max: res.max, ms: Math.round(res.ms), mode: st.key === 'gwm' ? res.mode : null, at: Date.now() };
+  save();
+  showResult(st, res);
+}
+function stat(label, value, note) {
+  return H('div', { class: 'stat' }, [H('p', { class: 'stat-label', text: label }), H('p', { class: 'stat-value', text: value }), note ? H('p', { class: 'stat-note', text: note }) : null]);
+}
+function reviewItem(ok, content) {
+  return H('li', { class: ok ? 'ok' : 'bad' }, [H('span', { class: 'mark', 'aria-label': ok ? 'Correcta' : 'Incorrecta', text: ok ? '✓' : '✗' }), H('span', {}, content)]);
+}
+const REVIEW = {
+  gf: res => H('ol', { class: 'review' }, MATRICES.map((it, i) => {
+    const a = res.answers[i];
+    return reviewItem(a.ok, [H('strong', { text: `Ítem ${i + 1}. ` }), H('span', { class: 'rule', text: it.rule }), a.ok ? '' : ` Elegiste la opción ${a.k + 1}; la correcta era la ${it.answer + 1}.`]);
+  })),
+  gq: res => H('ol', { class: 'review' }, SERIES.map((it, i) => {
+    const a = res.answers[i];
+    return reviewItem(a.ok, [H('strong', { text: `${it.seq.join(', ')} → ${it.ans}. ` }), a.v == null || isNaN(a.v) ? 'Sin respuesta. ' : `Respondiste ${a.v}. `, H('span', { class: 'rule', text: 'Regla: ' + it.rule })]);
+  })),
+  gc: res => H('div', { class: 'result' }, [
+    H('ol', { class: 'review' }, KNOW.map((it, i) => {
+      const a = res.answers[i];
+      return reviewItem(a.ok, [H('strong', { text: it.q + ' ' }), it.opts[it.a] + '.', a.ok ? '' : ` Elegiste: ${it.opts[a.k]}.`]);
+    })),
+    H('p', { class: 'callout', text: 'Para discutir: la pregunta sobre Gardner solo la responde bien quien cursó esta materia. Las pruebas de conocimiento dependen de la escolaridad, el idioma y la cultura, y por eso son las más expuestas a sesgos.' }),
+  ]),
+  gv: res => {
+    const el = H('div', { class: 'chart', id: 'ch-rt' });
+    const fig = H('figure', { class: 'fig' }, [
+      H('p', { class: 'fig-title', text: 'Tiempo de respuesta según el ángulo de rotación' }),
+      H('p', { class: 'fig-sub', text: 'Promedio de los ensayos correctos. Shepard y Metzler (1971) encontraron que el tiempo crece casi en línea recta con el ángulo, como si giráramos la imagen mentalmente.' }),
+      el,
+    ]);
+    registerChart(el, w => drawRT(el, w, res.byAngle));
+    return fig;
+  },
+  gwm: res => {
+    const tbl = H('table', { class: 'tbl' }, [
+      H('thead', {}, H('tr', {}, [H('th', { text: 'Largo' }), H('th', { text: 'Serie' }), H('th', { text: 'Respuesta' }), H('th', { text: 'Resultado' })])),
+      H('tbody', {}, res.log.map(l => H('tr', {}, [H('td', { text: String(l.len) }), H('td', { text: l.seq }), H('td', { text: l.resp }), H('td', { text: l.ok ? '✓ correcta' : '✗ error' })]))),
+    ]);
+    return H('div', { class: 'result' }, [
+      H('div', { class: 'table-wrap' }, tbl),
+      H('p', { class: 'callout', text: res.mode === 'inverso'
+        ? 'En la versión inversa hay que mantener la serie y además reordenarla: eso es memoria de trabajo en sentido estricto. Los adultos suelen recordar 4 a 6 dígitos al revés.'
+        : 'Los adultos suelen recordar entre 5 y 9 dígitos en orden directo (el famoso «7 ± 2» de Miller). Probá también la versión inversa.' }),
+    ]);
+  },
+};
+function showResult(st, res) {
+  const sc = scoreOf(st.key);
+  setProgress(1, 1, 'Subprueba terminada');
+  const isSpan = st.key === 'gwm';
+  const tiles = H('div', { class: 'stats' }, [
+    stat('Puntaje bruto', isSpan ? `${res.raw} dígitos` : `${res.raw} de ${res.max}`, isSpan ? 'Serie más larga repetida sin error' : 'Respuestas correctas'),
+    stat('Puntaje escalar', String(sc.esc), 'Media 10, desvío 3'),
+    stat('Percentil', String(pctNum(sc.pct)), `Supera al ${pctNum(sc.pct)}% del grupo normativo ficticio`),
+    stat('Tiempo', mmss(res.ms), 'Duración de la subprueba'),
+  ]);
+  const nextSt = SUBTESTS.find(s => !store.results[s.key]);
+  const actions = H('div', { class: 'actions' }, [
+    H('button', { class: 'btn primary', type: 'button', id: 'res-back', text: 'Ver la hoja de perfil', onclick: closeRunner }),
+    nextSt ? H('button', { class: 'btn ghost', type: 'button', id: 'res-next', text: 'Siguiente: ' + nextSt.task, onclick: () => startSubtest(nextSt.key) }) : null,
+    H('button', { class: 'btn ghost', type: 'button', id: 'res-again', text: 'Repetir', onclick: () => startSubtest(st.key) }),
+  ]);
+  $('#run-body').replaceChildren(H('div', { class: 'result' }, [tiles, REVIEW[st.key](res), actions]));
+  const rt = $('#ch-rt'); if (rt) redraw(rt);
+  $('#res-back').focus({ preventScroll: true });
+}
+
+function drawRT(el, w, data) {
+  const rem = remPx();
+  const Hh = Math.round(clamp(w * 0.5, 210, 300));
+  const m = { l: 3.4 * rem, r: 1.2 * rem, t: 1.4 * rem, b: 2.8 * rem };
+  const svg = newSvg(w, Hh, 'Tiempo de respuesta según el ángulo');
+  const pts = data.filter(d => d.rt != null);
+  const ymax = Math.max(1500, ...pts.map(d => d.rt)) * 1.15;
+  const ticks = niceTicks(0, ymax, 4);
+  const top = ticks[ticks.length - 1];
+  const X = a => m.l + (a / 180) * (w - m.l - m.r);
+  const Y = v => Hh - m.b - (v / top) * (Hh - m.t - m.b);
+  for (const t of ticks) {
+    S('line', { x1: m.l, x2: w - m.r, y1: r1(Y(t)), y2: r1(Y(t)), class: t === 0 ? 'ax-line' : 'gridline' }, svg);
+    T(svg, m.l - 6, Y(t) + 4, nf(t), { class: 'ax-text', 'text-anchor': 'end' });
+  }
+  for (const a of [0, 60, 120, 180]) T(svg, X(a), Hh - m.b + 1.2 * rem, a + '°', { class: 'ax-text', 'text-anchor': 'middle' });
+  T(svg, (m.l + w - m.r) / 2, Hh - 0.3 * rem, 'Diferencia de ángulo entre las figuras', { class: 'ax-title', 'text-anchor': 'middle' });
+  T(svg, 4, m.t - 0.5 * rem, 'ms', { class: 'ax-text' });
+  if (pts.length > 1) S('path', { d: pts.map((d, i) => (i ? 'L' : 'M') + r1(X(d.a)) + ',' + r1(Y(d.rt))).join(''), class: 'line' }, svg);
+  pts.forEach((d, i) => {
+    S('circle', { cx: r1(X(d.a)), cy: r1(Y(d.rt)), r: 5, class: 'dot', 'data-tip': `${d.a}°: ${nf(d.rt)} ms\nAciertos: ${pctf(d.acc)}` }, svg);
+    if (i === 0 || i === pts.length - 1) T(svg, X(d.a), Y(d.rt) - 0.7 * rem, nf(d.rt) + ' ms', { class: 'lbl', 'text-anchor': anchorFor(X(d.a), m.l, w - m.r, 30) });
+  });
+  if (!pts.length) T(svg, w / 2, Hh / 2, 'Sin ensayos correctos para graficar', { class: 'ax-title', 'text-anchor': 'middle' });
+  el.replaceChildren(svg);
+}
+
+/* ---------- Hoja de perfil ---------- */
+function renderHub() {
+  $('#factor-list').replaceChildren(...SUBTESTS.map(st => {
+    const sc = scoreOf(st.key);
+    const detail = sc ? (st.key === 'gwm' ? ` amplitud ${sc.raw}${sc.mode === 'inverso' ? ' (inverso)' : ''}` : ` ${sc.raw} de ${sc.max}`) : '';
+    return H('li', { class: 'factor' + (sc ? ' is-done' : '') }, [
+      H('p', { class: 'factor-code', text: st.code }),
+      H('h3', { class: 'factor-name', text: st.factor }),
+      H('p', { class: 'factor-task', text: st.task }),
+      H('p', { class: 'factor-status' }, sc ? [H('span', { class: 'pill', text: 'Escalar ' + sc.esc }), ' ·' + detail] : [H('span', { class: 'pill empty', text: 'Sin aplicar' })]),
+      H('button', { class: 'btn sm ' + (sc ? 'ghost' : 'primary'), type: 'button', id: 'start-' + st.key, text: sc ? 'Repetir' : 'Aplicar', onclick: () => startSubtest(st.key) }),
+    ]);
+  }));
+  const n = SUBTESTS.filter(s => scoreOf(s.key)).length;
+  $('#proto-count').textContent = `${n} de 5`;
+  const comp = composite();
+  $('#g-score').hidden = !comp;
+  if (comp) {
+    $('#g-ci').textContent = String(comp.ci);
+    $('#g-text').textContent = `Percentil ${pctNum(comp.pct)} · basado en ${comp.k} de 5 subpruebas · IC 95%: ${comp.lo} a ${comp.hi}`;
+  } else {
+    $('#g-text').textContent = n === 1 ? 'Falta una subprueba más para estimarlo.' : 'Aplicá al menos dos subpruebas para estimarlo.';
+  }
+  redraw($('#ch-profile'));
+  redraw($('#ch-composite'));
+}
+
+registerChart($('#ch-profile'), w => {
+  const rem = remPx();
+  const Hh = Math.round(clamp(w * 0.56, 230, 320));
+  const m = { l: 2.2 * rem, r: 0.6 * rem, t: 1.4 * rem, b: 2.4 * rem };
+  const svg = newSvg(w, Hh, 'Perfil de puntajes escalares');
+  const iw = w - m.l - m.r, ih = Hh - m.t - m.b;
+  const Y = v => m.t + ih * (1 - (v - 1) / 18);
+  const band = iw / 5; const X = i => m.l + band * (i + 0.5);
+  S('rect', { x: m.l, y: r1(Y(13)), width: r1(iw), height: r1(Y(7) - Y(13)), class: 'band' }, svg);
+  for (const v of [1, 4, 7, 10, 13, 16, 19]) {
+    S('line', { x1: m.l, x2: m.l + iw, y1: r1(Y(v)), y2: r1(Y(v)), class: v === 1 ? 'ax-line' : 'gridline' }, svg);
+    T(svg, m.l - 6, Y(v) + 4, String(v), { class: 'ax-text', 'text-anchor': 'end' });
+  }
+  T(svg, m.l + iw - 4, Y(13) + 0.95 * rem, 'rango promedio', { class: 'ax-text', 'text-anchor': 'end' });
+  const narrow = band < 5.6 * rem;
+  SUBTESTS.forEach((st, i) => {
+    T(svg, X(i), Hh - m.b + 1.15 * rem, narrow ? st.code : st.short, { class: 'ax-text', 'text-anchor': 'middle' });
+  });
+  const pts = SUBTESTS.map((st, i) => ({ st, i, sc: scoreOf(st.key) })).filter(p => p.sc);
+  if (pts.length > 1) S('path', { d: pts.map((p, k) => (k ? 'L' : 'M') + r1(X(p.i)) + ',' + r1(Y(p.sc.esc))).join(''), class: 'line' }, svg);
+  for (const p of pts) {
+    S('circle', { cx: r1(X(p.i)), cy: r1(Y(p.sc.esc)), r: 6, class: 'dot', 'data-tip': `${p.st.factor}\nEscalar ${p.sc.esc} · percentil ${pctNum(p.sc.pct)}` }, svg);
+    T(svg, X(p.i), Y(p.sc.esc) - 0.75 * rem, String(p.sc.esc), { class: 'lbl', 'text-anchor': 'middle' });
+  }
+  if (!pts.length) T(svg, m.l + iw / 2, m.t + ih / 2 + 4, 'Todavía no hay subpruebas aplicadas', { class: 'ax-title', 'text-anchor': 'middle' });
+  $('#ch-profile').replaceChildren(svg);
+});
+
+function drawBellAxis(svg, X, Y, w, Hh, m, rem) {
+  S('line', { x1: m.l, x2: w - m.r, y1: r1(Y(0)), y2: r1(Y(0)), class: 'ax-line' }, svg);
+  const narrow = (X(115) - X(100)) < 2.3 * rem;
+  [55, 70, 85, 100, 115, 130, 145].forEach((v, i) => {
+    S('line', { x1: r1(X(v)), x2: r1(X(v)), y1: r1(Y(0)), y2: r1(Y(0) + 4), class: 'ax-line' }, svg);
+    if (narrow && i % 2 === 0) return;
+    T(svg, X(v), Y(0) + 1.05 * rem, String(v), { class: 'ax-text', 'text-anchor': 'middle' });
+    T(svg, X(v), Y(0) + 2.0 * rem, ['−3σ', '−2σ', '−1σ', 'media', '+1σ', '+2σ', '+3σ'][i], { class: 'ax-text ax-small', 'text-anchor': 'middle' });
+  });
+}
+
+registerChart($('#ch-composite'), w => {
+  const rem = remPx();
+  const Hh = Math.round(clamp(w * 0.52, 210, 290));
+  const m = { l: 0.6 * rem, r: 0.6 * rem, t: 2 * rem, b: 2.7 * rem };
+  const lo = 40, hi = 160;
+  const X = v => m.l + (v - lo) / (hi - lo) * (w - m.l - m.r);
+  const dmax = phi(0) / 15;
+  const Y = d => Hh - m.b - d / dmax * (Hh - m.t - m.b);
+  const svg = newSvg(w, Hh, 'Distribución normal del CI con tu ubicación');
+  S('path', { d: bellD(X, Y, 100, 15, lo, hi, true), class: 'area' }, svg);
+  const comp = composite();
+  if (comp) S('path', { d: bellD(X, Y, 100, 15, lo, clamp(comp.ci, lo, hi), true), class: 'area-strong', 'data-tip': `${pctNum(comp.pct)}% de la población puntúa por debajo` }, svg);
+  S('path', { d: bellD(X, Y, 100, 15, lo, hi, false), class: 'line' }, svg);
+  drawBellAxis(svg, X, Y, w, Hh, m, rem);
+  if (comp) {
+    const x = X(clamp(comp.ci, lo, hi));
+    const yb = Y(0) - 0.55 * rem;
+    S('line', { x1: r1(X(Math.max(lo, comp.lo))), x2: r1(X(Math.min(hi, comp.hi))), y1: r1(yb), y2: r1(yb), class: 'ci-band', 'data-tip': `Intervalo de confianza 95%: ${comp.lo} a ${comp.hi}` }, svg);
+    for (const v of [comp.lo, comp.hi]) S('line', { x1: r1(X(clamp(v, lo, hi))), x2: r1(X(clamp(v, lo, hi))), y1: r1(yb - 5), y2: r1(yb + 5), class: 'ci-band' }, svg);
+    S('line', { x1: r1(x), x2: r1(x), y1: r1(m.t - 0.2 * rem), y2: r1(Y(0)), class: 'marker' }, svg);
+    T(svg, x, m.t - 0.55 * rem, `CI ${comp.ci} · percentil ${pctNum(comp.pct)}`, { class: 'lbl', 'text-anchor': anchorFor(x, m.l, w - m.r, 70) });
+  } else {
+    T(svg, w / 2, m.t - 0.55 * rem, 'Aplicá dos subpruebas para ubicarte en la curva', { class: 'ax-title', 'text-anchor': 'middle' });
+  }
+  $('#ch-composite').replaceChildren(svg);
+});
+
+let resetArmed = null;
+$('#reset-results').addEventListener('click', () => {
+  const btn = $('#reset-results');
+  const n = Object.keys(store.results).length;
+  if (!n) { btn.textContent = 'No hay resultados para borrar'; setTimeout(() => { btn.textContent = 'Borrar resultados'; }, 1800); return; }
+  if (!resetArmed) {
+    btn.textContent = `¿Borrar ${n === 1 ? 'el resultado' : 'los ' + n + ' resultados'}? Tocá de nuevo para confirmar`;
+    resetArmed = setTimeout(() => { resetArmed = null; btn.textContent = 'Borrar resultados'; }, 4000);
+    return;
+  }
+  clearTimeout(resetArmed); resetArmed = null;
+  store.results = {}; save(); renderHub();
+  btn.textContent = 'Resultados borrados';
+  setTimeout(() => { btn.textContent = 'Borrar resultados'; }, 1800);
+});
+
+/* ================= Inicio ================= */
+$('#proto-date').textContent = new Date().toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+applyScale();
+renderHub();
+})();
+</script>
