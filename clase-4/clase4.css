@@ -1,0 +1,224 @@
+/* Ajustes propios de la clase 4. El diseño base está en style.css. */
+.answer { margin-top: 24px; }
+.slide .question { font-size: 32px; }
+.map-root.wide { width: 760px; }
+
+/* Diapositivas compactas: más densas para que entren las respuestas desplegadas. */
+.compact h2 { margin-bottom: 22px; }
+.compact .question { font-size: 28px; margin-bottom: 18px; }
+.compact .activity-time { margin-bottom: 18px; }
+.compact .situations p { padding: 12px 0; font-size: 27px; }
+.compact .prompt { margin-top: 26px; }
+.compact .map-root { margin-bottom: 40px; }
+.compact table { font-size: 21px; }
+.compact th, .compact td { padding: 11px 14px; }
+.compact .takeaway { margin-top: 26px; padding-top: 16px; font-size: 25px; }
+.compact .answer { margin-top: 16px; }
+.compact .answer p { margin-top: 10px; font-size: 23px; }
+.compact .hanoi { margin-top: 26px; }
+
+/* Botones de las actividades: Iniciar, Revisar, Reiniciar. */
+.activity-button { border: 2px solid var(--accent); background: white; color: var(--accent-text); font-size: 21px; padding: 8px 18px; }
+.activity-button:hover { background: var(--pale); }
+
+/* Stroop: tres tarjetas. Cada palabra se marca al decirla y el cronómetro corre entre "Iniciar" y la última. */
+.stroop-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 26px; }
+.stroop-card { background: var(--surface); border: 1px solid var(--line); border-top: 6px solid var(--accent); padding: 20px 22px 22px; }
+.stroop-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
+.stroop-head h3 { margin: 0; font-size: 26px; }
+.stroop-head .activity-button { padding: 5px 12px; font-size: 19px; white-space: nowrap; }
+.stroop-task { font-size: 21px; line-height: 1.35; color: var(--muted); margin-bottom: 14px; min-height: 28px; }
+.stroop-words { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 12px; }
+.stroop-words li { font-size: 34px; font-weight: 650; line-height: 1.25; letter-spacing: .01em; }
+.stroop-item { font: inherit; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; }
+.stroop-item.done { opacity: .25; }
+.stroop-compare { font-size: 24px; line-height: 1.35; margin-top: 18px; color: var(--accent-text); }
+.stroop-compare:empty { display: none; }
+.ink-red { color: #c0392b; }
+.ink-blue { color: #1f5fbf; }
+.ink-green { color: #1e7b45; }
+
+/* n-back: la secuencia con su número de posición; los botones quedan a la derecha. */
+.nback-top { display: flex; align-items: center; gap: 56px; margin: 30px 0 34px; }
+.sequence { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; }
+.sequence li { display: grid; justify-items: center; gap: 8px; }
+.sequence span { font-size: 21px; color: var(--muted); }
+.seq-cell { display: grid; place-items: center; width: 104px; height: 104px; border: 2px solid var(--accent); background: white; color: var(--ink); font: inherit; font-size: 52px; font-weight: 650; cursor: pointer; }
+.seq-cell[aria-pressed="true"] { background: var(--highlight); border-color: var(--highlight-text); }
+.seq-cell.ok { border-color: #1e7b45; box-shadow: inset 0 0 0 5px #1e7b45; }
+.seq-cell.miss { border-color: #c0392b; box-shadow: inset 0 0 0 5px #c0392b; }
+.nback-side { display: grid; gap: 12px; justify-items: start; max-width: 430px; }
+.nback-status { font-size: 23px; line-height: 1.38; min-height: 64px; }
+
+/* Clasificación de cartas: opciones de referencia, carta a clasificar y conteo. */
+.wcst { display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: start; margin: 8px 0 12px; }
+.wcst h3 { font-size: 26px; margin-bottom: 10px; }
+.wcst-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.wcst-keys .activity-button { margin-top: 12px; }
+.wcst-options button { font: inherit; font-size: 25px; text-align: left; padding: 10px 16px; background: white; border: 1px solid var(--line); cursor: pointer; }
+.wcst-options button:hover { background: var(--pale); }
+.wcst-side { display: grid; gap: 10px; }
+.wcst-card { background: var(--pale); border: 2px solid var(--accent); padding: 16px 22px; }
+.wcst-card p { font-size: 30px; font-weight: 650; }
+.wcst-status { font-size: 26px; font-weight: 650; color: var(--accent-text); }
+.wcst-count { font-size: 21px; color: var(--muted); }
+.wcst-rule { font-size: 21px; line-height: 1.38; color: var(--muted); margin-top: 12px; }
+
+/* Viñetas: cada una con sus funciones posibles y una explicación al elegir. */
+ol.activity-questions li { padding: 12px 0; }
+.vignette-text { font-size: 27px; line-height: 1.38; margin-bottom: 12px; }
+.vignette-chips { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+.vignette-chip { font: inherit; font-size: 21px; padding: 7px 16px; background: white; border: 2px solid var(--accent); color: var(--accent-text); cursor: pointer; }
+.vignette-chip[aria-pressed="true"] { background: var(--accent); color: white; }
+.vignette-feedback { font-size: 23px; line-height: 1.35; }
+.vignette-feedback:empty { display: none; }
+.vignette-feedback.ok { color: var(--accent-text); }
+.vignette-feedback.miss { color: var(--ink); }
+.print-only { display: none; }
+
+/* Casos de estrategias: un caso por vez, con navegación. */
+.strategy-count { font-size: 22px; color: var(--muted); margin-bottom: 10px; }
+.strategy-case .vignette-text { font-size: 27px; margin-bottom: 22px; }
+.strategy-case .vignette-chips { margin-bottom: 20px; }
+.strategy-nav { display: flex; gap: 12px; margin-top: 22px; }
+.strategy-nav .activity-button { min-width: 150px; }
+
+/* Torre de Hanoi: mismos estilos que la clase 3 (hanoi.js). */
+.hanoi { display: grid; grid-template-columns: 1fr 390px; gap: 40px; align-items: start; margin-top: 8px; }
+.hanoi-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; background: var(--surface); border: 1px solid var(--line); padding: 18px 18px 8px; }
+.hanoi-peg { position: relative; height: 270px; border: 2px solid transparent; border-radius: 6px; background: transparent; padding: 0; }
+.hanoi-peg:hover { background: var(--pale); }
+.hanoi-peg[aria-pressed="true"] { border-color: var(--accent); background: var(--pale); }
+.hanoi-peg::before { content: ""; position: absolute; left: 50%; bottom: 44px; width: 12px; height: 190px; margin-left: -6px; background: var(--muted); border-radius: 6px 6px 0 0; }
+.hanoi-peg::after { content: ""; position: absolute; left: 6%; right: 6%; bottom: 34px; height: 12px; background: var(--ink); border-radius: 3px; }
+.peg-label { position: absolute; left: 0; right: 0; bottom: 2px; font-size: 24px; font-weight: 650; color: var(--accent-text); }
+.disc { position: absolute; left: 50%; z-index: 1; bottom: calc(46px + var(--level) * 42px); width: calc(52px + var(--size) * 54px); height: 38px; transform: translateX(-50%); border-radius: 19px; transition: transform .15s ease; }
+.disc[data-size="1"] { background: var(--highlight); }
+.disc[data-size="2"] { background: var(--accent); }
+.disc[data-size="3"] { background: var(--ink); }
+.disc.lifted { transform: translate(-50%, -24px); box-shadow: 0 0 0 4px white, 0 0 0 7px var(--accent); }
+.hanoi-side p { font-size: 25px; line-height: 1.4; }
+.hanoi-status { min-height: 106px; }
+.hanoi-count { margin-top: 12px !important; color: var(--accent-text); }
+.hanoi-count output { font-variant-numeric: tabular-nums; font-weight: 650; }
+.hanoi-reset { margin-top: 14px; border: 2px solid var(--accent); background: white; color: var(--accent-text); font-size: 21px; padding: 8px 18px; }
+.hanoi-reset:hover { background: var(--pale); }
+.hanoi-side .answer { margin-top: 18px; }
+
+@media screen and (max-width: 700px) {
+  .stroop-cards, .wcst { grid-template-columns: 1fr; gap: 18px; }
+  .stroop-head h3 { font-size: 23px; }
+  .stroop-task, .wcst-options button { font-size: 20px; }
+  .stroop-words li { font-size: 28px; }
+  .stroop-compare { font-size: 21px; }
+  .nback-top { flex-direction: column; align-items: start; gap: 20px; }
+  .sequence { gap: 10px; }
+  .seq-cell { width: 66px; height: 66px; font-size: 36px; }
+  .sequence span { font-size: 17px; }
+  .nback-status { font-size: 21px; min-height: 0; }
+  .wcst-card p { font-size: 24px; }
+  .wcst-status { font-size: 22px; }
+  .vignette-text { font-size: 21px; }
+  .vignette-chip { font-size: 18px; }
+  .vignette-feedback { font-size: 20px; }
+  .hanoi { grid-template-columns: 1fr; gap: 20px; }
+  .hanoi-board { gap: 6px; padding: 12px 8px 6px; }
+  .hanoi-peg { height: 190px; }
+  .hanoi-peg::before { height: 120px; bottom: 40px; width: 9px; margin-left: -4px; }
+  .hanoi-peg::after { bottom: 30px; height: 10px; }
+  .peg-label { font-size: 19px; }
+  .disc { bottom: calc(40px + var(--level) * 28px); width: calc(26px + var(--size) * 22px); height: 26px; }
+  .hanoi-side p { font-size: 20px; }
+  .hanoi-status { min-height: 0; }
+  .hanoi-reset { font-size: 18px; }
+}
+
+@media print {
+  .answer > :not(summary) { display: block !important; }
+  .answer summary { display: none; }
+  .activity-button, .hanoi-reset, .vignette-chips, .nback-side, .strategy-case, .strategy-nav { display: none !important; }
+  .print-only { display: block; margin-top: 18px; font-size: 22px; line-height: 1.4; }
+  .disc.lifted { transform: translateX(-50%); box-shadow: none; }
+}
+
+/* Controles y estímulos de las demostraciones. */
+.stroop-card.running { border-color: var(--accent); background: var(--pale); }
+.stroop-head { flex-wrap: wrap; }
+.stroop-head .activity-button { min-width: 105px; font-variant-numeric: tabular-nums; }
+.card-art { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; min-height: 50px; }
+.card-shape { display: inline-block; width: 36px; height: 36px; background: currentColor; }
+.shape-0 { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.shape-1 { border-radius: 50%; }
+.shape-2 { clip-path: polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 96%,50% 73%,21% 96%,32% 57%,2% 35%,39% 35%); }
+.color-0 { color: #c0392b; } .color-1 { color: #1e7b45; }
+.color-2 { color: #1f5fbf; } .color-3 { color: #b98300; }
+.card-caption { display: block; text-align: center; font-size: 18px; font-weight: 400; margin-top: 6px; }
+.wcst-options button { border: 2px solid var(--line); }
+.wcst-options button:focus-visible { border-color: var(--accent); }
+.nback-stage { display: grid; grid-template-columns: 1fr; gap: 20px; justify-items: center; text-align: center; margin: 24px 0; }
+.nback-stimulus { grid-row: 2; display: grid; place-items: center; width: 230px; max-width: 100%; min-height: 180px; background: var(--pale); border: 2px solid var(--accent); font-size: 86px; font-weight: 650; }
+.nback-prompt { grid-row: 1; font-size: 26px; margin: 0; }
+.nback-actions { grid-row: 3; display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+.nback-actions .activity-button { min-width: 170px; }
+.nback-hint { font-size: 19px; color: var(--muted); margin: 0; }
+.nback-response { font-size: 21px; min-height: 28px; margin: 0; }
+.nback-stage { gap: 12px; }
+.nback-stage > .activity-button { font-size: 18px; padding: 6px 14px; }
+.nback-top[hidden], .nback-stage[hidden] { display: none; }
+.hanoi-undo { margin-left: 10px; }
+.activity-button:disabled, .wcst-options button:disabled { opacity: .45; cursor: default; }
+.activity-button:focus-visible, .wcst-options button:focus-visible, .seq-cell:focus-visible, .vignette-chip:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+@media screen and (max-width: 700px) {
+  .sequence { gap: 6px; width: 100%; }
+  .sequence li { flex: 1; min-width: 0; }
+  .seq-cell { width: 100%; min-width: 0; height: 58px; }
+  .nback-stage { grid-template-columns: 1fr; }
+  .nback-stimulus { min-height: 130px; }
+  .nback-prompt { font-size: 21px; }
+  .card-shape { width: 26px; height: 26px; }
+  .card-art { gap: 6px; }
+  .disc { max-width: 98%; }
+}
+@media (prefers-reduced-motion: reduce) { .disc { transition: none; } }
+/* TMT: recorrido amplio y controles a su derecha. */
+.tmt-demo { display: grid; grid-template-columns: 740px 1fr; gap: 30px; align-items: start; }
+.tmt-board { position: relative; height: 370px; background: var(--surface); border: 1px solid var(--line); touch-action: none; user-select: none; }
+.tmt-board.drawing, .tmt-board.drawing .tmt-node { cursor: crosshair; }
+.tmt-board .tmt-preview { stroke: var(--muted); }
+.tmt-board svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.tmt-board polyline { fill: none; stroke: var(--accent); stroke-width: 3; vector-effect: non-scaling-stroke; }
+.tmt-node { position: absolute; transform: translate(-50%, -50%); width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--ink); background: white; color: var(--ink); font: inherit; font-size: 25px; cursor: pointer; padding: 0; }
+.tmt-node.visited { background: var(--accent); color: white; border-color: var(--accent); }
+.tmt-node.wrong { border: 4px dashed #a82d25; }
+.tmt-node:focus-visible { outline: 3px solid var(--highlight-text); outline-offset: 3px; }
+.tmt-side h3 { font-size: 27px; margin-bottom: 12px; }
+.tmt-side p { font-size: 22px; line-height: 1.35; margin: 12px 0; }
+.tmt-count { font-variant-numeric: tabular-nums; }
+.tmt-results p, .gng-results p { color: var(--accent-text); font-weight: 600; }
+.demo-controls { display: flex; justify-content: inherit; flex-wrap: wrap; gap: 10px; }
+.demo-controls .activity-button { font-size: 20px; padding: 7px 12px; }
+.demo-caption { font-size: 19px; color: var(--muted); margin: 18px 0 0; }
+.gng-demo { display: grid; justify-items: center; gap: 10px; text-align: center; }
+.gng-progress { font-size: 22px; margin: 0; }
+.gng-stimulus { display: grid; place-items: center; width: 220px; height: 170px; background: var(--pale); border: 2px solid var(--accent); font-size: 90px; font-weight: 600; line-height: 1; }
+.gng-status { font-size: 22px; line-height: 1.35; min-height: 30px; margin: 0; }
+.gng-respond { min-width: 250px; }
+.gng-results p { font-size: 22px; line-height: 1.3; margin: 4px 0; }
+.gng-results:empty { display: none; }
+@media screen and (max-width: 700px) {
+  .tmt-demo { grid-template-columns: 1fr; gap: 20px; }
+  .tmt-board { height: 340px; }
+  .tmt-node { width: 42px; height: 42px; font-size: 22px; }
+  .tmt-side p, .gng-status, .gng-results p { font-size: 20px; }
+  .gng-stimulus { width: 180px; height: 150px; }
+  .demo-caption { font-size: 17px; }
+}
+@media print {
+  .gng-respond, .demo-controls { display: none !important; }
+  .tmt-board::after { content: 'A: unir 1 a 12. B: alternar 1, A, 2, B… hasta 6, F.'; position: absolute; inset: 0; display: grid; place-items: center; padding: 30px; font-size: 26px; background: var(--surface); }
+}
+@media print {
+  .nback-stage { display: none !important; }
+  .nback-top[hidden] { display: flex !important; }
+  .slide details.answer[hidden], .slide .question[hidden] { display: block !important; }
+}

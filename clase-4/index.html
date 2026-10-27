@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Clase 4 de Procesos Básicos III: funciones ejecutivas. Antecedentes, modelos, actividades, evaluación y validez ecológica. Universidad Favaloro.">
+  <title>Clase 4 · Funciones ejecutivas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="clase4.css">
+  <script src="presentation.js" defer></script>
+  <script src="hanoi.js" defer></script>
+  <script src="actividades.js" defer></script>
+  <script src="tmt-gonogo.js" defer></script>
+</head>
+<body>
+  <main id="viewport" aria-label="Presentación de la clase 4">
+    <div id="deck">
+
+      <section class="slide cover" data-block="Apertura" data-title="Funciones ejecutivas">
+        <div class="cover-brand"><img src="assets/favaloro.png" alt="Universidad Favaloro"><p>Facultad de Ciencias Humanas<br>y de la Conducta</p></div>
+        <div class="cover-copy"><p class="course">Procesos Básicos III · Clase 4</p><h1>Funciones<br>ejecutivas</h1><p class="cover-subtitle">Dr. Fernando Tonini</p></div>
+        <div class="cover-bottom"><span>Planificar, inhibir, sostener y cambiar</span><span>Antecedentes, modelos, evaluación y validez ecológica</span></div>
+        <aside class="speaker-notes" hidden>Clase de 90 minutos. Distribución orientativa: apertura, 8 min (diapositivas 1–3); antecedentes, 10 min (4–9); modelos, 20 min (10–18); actividades, 30 min (19–27); evaluación y validez ecológica, 12 min (28–30); neuropsicología clínica, 10 min (31–33). Si falta tiempo, las diapositivas 9 y 18 pueden leerse sin comentario, y la 33 resolverse como pregunta oral. Conexión con el programa 2026: planificación y monitoreo, y metacognición, dentro de solución de problemas. El programa no nombra las funciones ejecutivas. Fuentes principales: Tirapu-Ustárroz y Luna-Lario (2008), "Neuropsicología de las funciones ejecutivas", en Manual de neuropsicología, 2. La referencia de la presentación UF 2022 indica pp. 221–237; el texto del capítulo llega hasta la p. 254. Ardila y Ostrosky-Solís (2008), "Desarrollo histórico de las funciones ejecutivas", Revista Neuropsicología, Neuropsiquiatría y Neurociencias, 8(1). La referencia de la UF indica pp. 1–9; el artículo completo abarca pp. 1–21. Antecedente: presentación "Funciones ejecutivas" de la UF 2022 (Lic. Federico Giovannetti), citada como "UF 2022, diap. N". Las páginas que se citan son las del libro o artículo impreso. Las situaciones, viñetas y ejemplos marcados como elaboración didáctica no son datos ni resultados empíricos.</aside>
+      </section>
+
+      <section class="slide compact" data-block="Apertura" data-title="Situaciones cotidianas" data-source="Elaboración didáctica">
+        <h2>Situaciones cotidianas</h2><p class="activity-time">En parejas · 3 minutos</p>
+        <div class="situations"><p>Preparar un examen con una semana de anticipación y ordenar los temas.</p><p>Frenar una respuesta impulsiva en medio de una discusión.</p><p>Dejar de aplicar una regla que antes servía y ahora no sirve.</p><p>Sostener la atención en un trámite largo, sin que nadie lo controle.</p><p>Recordar lo pendiente mientras se atiende otra cosa.</p><p>Organizar una mudanza de fin de semana en un orden de pasos.</p></div>
+        <div class="prompt"><strong>Para conversar</strong><p>¿Qué tienen en común? ¿Qué tendría que sostener la persona mientras hace cada una?</p></div>
+        <aside class="speaker-notes" hidden>Dos minutos en parejas y uno de puesta en común. Las situaciones son elaboraciones didácticas, no datos. Lo que se busca es que aparezcan palabras como "meta", "recordar", "inhibir", "cambiar", "sostener" u "ordenar". Ese vocabulario es el de la clase: en todas las situaciones lo que se pone en juego son procesos de control sobre el pensamiento y la conducta, más que contenidos. Cerrar con la idea: hoy vamos a ponerle nombre a esa capacidad y a ver cómo se estudia.</aside>
+      </section>
+
+      <section class="slide definition" data-block="Apertura" data-title="Qué son las funciones ejecutivas" data-source="Miyake y Friedman (2014), citados en UF 2022, diap. 5; Tirapu y Luna-Lario (2008), p. 222">
+        <h2>Qué son las funciones ejecutivas</h2><p class="author-line">Miyake y Friedman (2014), citados en la presentación UF 2022</p><p class="large-statement">Un conjunto de procesos de control y de dominio general que permiten la regulación de los pensamientos y la conducta.</p>
+        <div class="definition-bottom"><p>Entre los procesos de control se mencionan la atención, la inhibición, la memoria de trabajo, la flexibilidad y la planificación.</p><p>"Dominio general" es una afirmación discutida. La revisamos en el bloque de modelos.</p></div>
+        <aside class="speaker-notes" hidden>Leer la definición en voz alta y pedir una paráfrasis. Tirapu y Luna-Lario advierten que "el constructo de funciones ejecutivas no se puede considerar bien definido" (p. 222): la definición es de uso frecuente, no una ley. Relacionar con las situaciones de la diapositiva 2: cada una exige control sobre el pensamiento o la conducta. La cita de Miyake y Friedman (2014) aparece en la presentación UF 2022 (diap. 5); no la verifiqué en la bibliografía original, así que conviene citarla por ese medio.</aside>
+      </section>
+
+      <section class="slide divider" data-block="Antecedentes" data-title="Antecedentes"><p>Antecedentes</p><h2>De la caja negra<br>al plan de acción</h2><div class="divider-caption">Por qué la psicología tardó en hablar de control.</div>
+        <aside class="speaker-notes" hidden>Transición. El concepto tiene una historia de rechazo y de recuperación: primero el conductismo descarta lo mental; después la cibernética, la teoría de la información y la neuropsicología lo vuelven a introducir.</aside>
+      </section>
+
+      <section class="slide" data-block="Antecedentes" data-title="Tres giros hacia el control" data-source="UF 2022, diap. 6–10; Miller, Galanter y Pribram (1960), citados en UF 2022, diap. 11">
+        <h2>Tres giros hacia el control</h2>
+        <div class="theory-rows"><div><h3>Conductismo</h3><p>Sólo se estudia lo observable: estímulo y respuesta, con una "caja negra" en el medio. Se descartan conceptos como plan, intención o idea.</p></div><div><h3>Lashley (1948)</h3><p>¿Cómo se explica tocar un instrumento o hablar? Una cadena de asociaciones estímulo-respuesta no alcanza: la conducta compleja se organiza de antemano.</p></div><div><h3>Miller, Galanter y Pribram (1960)</h3><p>El plan es un proceso jerárquico que controla el orden de una secuencia de operaciones.</p></div></div>
+        <aside class="speaker-notes" hidden>Contexto que da la presentación UF 2022: las guerras dejaron heridas cerebrales y la computación ofreció un modelo de programas (Turing, 1936; diap. 8). Wiener (1948) habla de máquinas que "persiguen metas", con retroalimentación y autorregulación (diap. 9). En el simposio de Hixon (1948), Lashley plantea el "orden serial de la conducta": la cadena de estímulo-respuesta no explica tocar un instrumento o hablar (diap. 10). Miller, Galanter y Pribram (1960) incorporan el plan como organizador de la conducta, con un parecido explícito a los programas de computadora de la época (diap. 11). Los nombres y las fechas son las que aparecen en la presentación UF 2022.</aside>
+      </section>
+
+      <section class="slide" data-block="Antecedentes" data-title="La unidad TOTE" data-source="Miller, Galanter y Pribram (1960), citados en UF 2022, diap. 11–12">
+        <h2>La unidad TOTE: test, operación, test, salida</h2>
+        <div class="process-diagram"><div><strong>Test</strong><span>¿El clavo está al ras?</span></div><span>→</span><div><strong>Operación</strong><span>Martillar el clavo.</span></div><span>→</span><div><strong>Test</strong><span>¿Está al ras? Sí: salida. No: volver a operar.</span></div></div>
+        <p class="takeaway">La conducta se organiza por comparaciones con una meta. Mientras la comparación falle, la operación se repite.</p>
+        <aside class="speaker-notes" hidden>Ejemplo del clavo, tomado de la presentación UF 2022 (diap. 12). Dibujar el ciclo en el pizarrón: comparar, actuar, comparar, salir. Pregunta: ¿qué pasa si el clavo se dobla? La unidad no es un arco reflejo: el ciclo continúa hasta cumplir la meta. Conexión con la clase 3: la búsqueda de solución también se puede describir como comparación entre el estado actual y la meta.</aside>
+      </section>
+
+      <section class="slide" data-block="Antecedentes" data-title="Rutinas jerárquicas y homúnculo" data-source="Simon (1967) y Neisser (1967), citados en UF 2022, diap. 14–16">
+        <h2>Rutinas jerárquicas y el problema del homúnculo</h2>
+        <div class="split"><div><h3>Simon (1967)</h3><p>Una ruta se descompone en rutinas: caminar una cuadra, cruzar la calle y, si ya se llegó a la esquina, terminar; si no, repetir.</p></div><div><h3>Neisser (1967)</h3><p>Un "agente ejecutivo" parece un homúnculo, un observador dentro de la mente que decide todo. La jerarquía de rutinas evita ese problema porque tiene un límite: en algún nivel se llega a la rutina más alta.</p></div></div>
+        <p class="takeaway">El control ejecutivo sería un proceso secundario, realizado por un sistema parecido a las rutinas de un programa de computadora.</p>
+        <aside class="speaker-notes" hidden>Ejemplo de Simon (1967) tomado de la presentación UF 2022 (diap. 14): la ruta hasta Corrientes y Medrano. Preguntar: ¿qué pasa si la jerarquía no tiene un nivel más alto? Entonces hace falta otro ejecutivo, y otro. Tirapu y Luna-Lario (2008, p. 252) recogen ese argumento como crítica del concepto ("regresión al infinito").</aside>
+      </section>
+
+      <section class="slide" data-block="Antecedentes" data-title="Luria: tres unidades funcionales" data-source="Luria (1966, 1969, 1980), citados en Ardila y Ostrosky-Solís (2008), pp. 2–3; UF 2022, diap. 18–19 y 22">
+        <h2>Luria: tres unidades funcionales</h2>
+        <div class="theory-rows"><div><h3>Alerta y motivación</h3><p>Sistema límbico y reticular.</p></div><div><h3>Recepción y almacenamiento</h3><p>Áreas corticales postrolándicas: procesan y guardan la información.</p></div><div><h3>Programación y control</h3><p>Corteza prefrontal: formación de planes e intenciones, y verificación de la actividad.</p></div></div>
+        <p class="takeaway">Pribram (1973) usó el término "ejecutivo" para los procesos asociados con el lóbulo frontal (UF 2022, diap. 22).</p>
+        <aside class="speaker-notes" hidden>Las tres unidades son las que describe Luria (cita de 1980 en Ardila y Ostrosky-Solís, p. 2). La tercera programa, controla y verifica la actividad. Según la presentación UF 2022 (diap. 18–19), Luria relacionaba el lóbulo frontal con la conducta intencionada, la ejecución de programas complejos y la organización de estrategias. Advertencia de Ardila y Ostrosky-Solís (2008, p. 3): el "síndrome prefrontal" y las "funciones ejecutivas" no son sinónimos. El lóbulo frontal es clave, pero las redes son más amplias.</aside>
+      </section>
+
+      <section class="slide" data-block="Antecedentes" data-title="Lezak y el término" data-source="Lezak (1982), citada en Tirapu y Luna-Lario (2008), p. 222; UF 2022, diap. 20 y 23">
+        <h2>Muriel Lezak y el término "funciones ejecutivas"</h2>
+        <p class="lead">Lezak lo usó para las capacidades que permiten formular objetivos, planificar cómo lograrlos y llevar esos planes a cabo con eficacia.</p>
+        <div class="example"><p>"Capacidades mentales esenciales para llevar a cabo una conducta eficaz, creativa y aceptada socialmente."</p><strong>Tirapu y Luna-Lario (2008), p. 222</strong></div>
+        <p class="takeaway">Otros autores agregan anticipación, elección de objetivos, selección de la conducta, autorregulación, automonitorización y uso de la retroalimentación (Tirapu y Luna-Lario, 2008, p. 222).</p>
+        <aside class="speaker-notes" hidden>Lezak distinguió el "funcionamiento ejecutivo" de las funciones cognitivas que explican el "cómo" de la conducta (Ardila y Ostrosky-Solís, 2008, p. 2). La fecha del término varía según la fuente: la referencia de Tirapu y Luna-Lario es de 1982 ("The problem of assessing executive functions") y la UF 2022 también dice 1982 (diap. 20 y 23); Ardila y Ostrosky-Solís citan 1983. Conviene decir 1982 y mencionar la diferencia si alguien pregunta. Lezak también escribió un manual sistemático de evaluación neuropsicológica (UF 2022, diap. 20).</aside>
+      </section>
+
+      <section class="slide divider" data-block="Modelos" data-title="Modelos"><p>Modelos</p><h2>Cómo se organiza<br>el control</h2><div class="divider-caption">Jerarquía, memoria de trabajo, sistema atencional, emociones y decisiones.</div>
+        <aside class="speaker-notes" hidden>Transición. Los modelos no se excluyen: cada uno enfoca un aspecto distinto del mismo fenómeno. Al final del bloque se discute si son un proceso único o varios.</aside>
+      </section>
+
+      <section class="slide compact" data-block="Modelos" data-title="Stuss y Benson: una jerarquía" data-source="Stuss y Benson (1986), citados en Tirapu y Luna-Lario (2008), pp. 224–225 (fig. 2)">
+        <h2>Stuss y Benson: una jerarquía de funciones</h2>
+        <div class="map-root wide">Autoconciencia: monitorear la propia actividad mental</div>
+        <div class="map-branches"><div><h3>Control ejecutivo</h3><p>Anticipación, selección de objetivos, planificación y monitorización de la respuesta.</p></div><div><h3>Impulso y organización temporal</h3><p>Iniciar y mantener la actividad; ordenar secuencias en el tiempo.</p></div><div><h3>Funciones básicas</h3><p>Atención, memoria, lenguaje y percepción, en áreas posteriores y basales.</p></div></div>
+        <p class="takeaway">Stuss (1991) mantuvo la idea de funciones jerárquicas, independientes pero interactivas.</p>
+        <aside class="speaker-notes" hidden>Stuss y Benson (1986) proponen que el córtex prefrontal ejerce un control supramodal sobre funciones básicas situadas en estructuras basales o retrorrolándicas (Tirapu y Luna-Lario, 2008, p. 224). La autoconciencia ocupa el vértice; el control ejecutivo, el segundo nivel; el impulso y la organización temporal, el tercero. Stuss (1991) reformula el modelo como un sistema de tres componentes, cada uno con su mecanismo de control (pp. 224–225). Pregunta para la clase: ¿qué diferencia hay entre no empezar una tarea (impulso) y empezarla sin poder corregir el rumbo (control)?</aside>
+      </section>
+
+      <section class="slide" data-block="Modelos" data-title="Memoria de trabajo" data-source="Baddeley y Hitch (1974) y reformulación de 2000, citados en Tirapu y Luna-Lario (2008), pp. 227–231">
+        <h2>Memoria de trabajo: un sistema de control</h2>
+        <div class="map-root">Ejecutivo central</div>
+        <div class="map-branches"><div><h3>Bucle fonológico</h3><p>Mantiene la información verbal con repaso articulatorio.</p></div><div><h3>Agenda visuoespacial</h3><p>Crea y manipula imágenes visuales y espaciales.</p></div><div><h3>Buffer episódico</h3><p>Integra información fonológica, visual y de la memoria a largo plazo (2000).</p></div></div>
+        <p class="takeaway">El ejecutivo central no almacena información. Por eso Tirapu y Luna-Lario proponen llamarlo "sistema atencional supervisor" (p. 231).</p>
+        <aside class="speaker-notes" hidden>Baddeley y Hitch (1974) describen la memoria de trabajo como un sistema que mantiene y manipula información en el corto plazo (Tirapu y Luna-Lario, 2008, p. 227). Subsistemas: bucle fonológico (almacén pasivo más repaso subvocal, p. 228); agenda visuoespacial (p. 228–229); ejecutivo central, que controla y selecciona estrategias (p. 229). En 2000 se agrega el buffer episódico (p. 231). Clave para el resto de la clase: la memoria de trabajo no sólo mantiene, también manipula (p. 230). Por eso aparece en casi todos los modelos ejecutivos.</aside>
+      </section>
+
+      <section class="slide" data-block="Modelos" data-title="Norman y Shallice: rutina o novedad" data-source="Norman y Shallice (1982), citados en Tirapu y Luna-Lario (2008), pp. 232–234">
+        <h2>Norman y Shallice: rutina o novedad</h2>
+        <div class="split"><div><h3>Programador de contienda</h3><p>Activa acciones rutinarias según el ambiente. Los esquemas compiten y gana el más activado. Sin señales del ambiente, no hace nada o persevera.</p></div><div><h3>Sistema atencional supervisor</h3><p>Interviene cuando la rutina no alcanza: planificar, decidir o inhibir una respuesta habitual. Modula la fuerza de los esquemas en competencia.</p></div></div>
+        <div class="example"><p>Manejar por un camino conocido es rutina. Ver un ciclista por el carril lateral mientras hablamos con alguien requiere el sistema supervisor.</p></div>
+        <p class="takeaway">Fallas típicas: perseveración, cuando no se inhibe el esquema dominante; distractibilidad, cuando no se inhiben los esquemas parásitos.</p>
+        <aside class="speaker-notes" hidden>Tirapu y Luna-Lario (2008) resumen el modelo: el sistema supervisor se activa en situaciones novedosas, sin solución conocida, cuando hay que planificar o decidir, o cuando hay que inhibir una respuesta habitual (pp. 232–233). Las dos fallas típicas aparecen en la p. 234. Conexión con la clase 2: la regla que se aplica sin pensar funciona como esquema dominante. El ejemplo de la clase es una hipótesis para discutir; no es una explicación comprobada del sesgo.</aside>
+      </section>
+
+      <section class="slide" data-block="Modelos" data-title="El marcador somático" data-source="Damasio, y Bechara et al., citados en Tirapu y Luna-Lario (2008), pp. 234–236">
+        <h2>Decidir con señales del cuerpo</h2>
+        <p class="lead">Pacientes con daño ventromedial prefrontal resuelven bien los tests de laboratorio, pero fallan en las decisiones personales y sociales.</p>
+        <div class="example"><p>Juego de cartas (Iowa Gambling Task): cuatro mazos. Dos dan ganancias grandes con pérdidas grandes, y dos dan ganancias chicas con pérdidas chicas. Los mazos de ganancias chicas resultan mejores a largo plazo.</p></div>
+        <p class="takeaway">En quienes aprenden la tarea, la piel responde antes de elegir un mazo riesgoso. En lesiones ventromediales esa respuesta anticipadora es menor o no aparece (Tirapu y Luna-Lario, 2008, p. 236).</p>
+        <aside class="speaker-notes" hidden>Damasio propone que las emociones señalan qué opciones conviene descartar. El "marcador somático" es un cambio corporal que guía la decisión (Tirapu y Luna-Lario, 2008, pp. 234–235). Tirapu da cifras medias de ganancia y pérdida para la tarea de Bechara; conviene no repetirlas en clase sin verificar la versión usada. La lección es el patrón, no el número. Los sujetos normales eligen al azar al principio y, alrededor de la carta 30, se vuelcan a los mazos ventajosos a largo plazo; los pacientes ventromediales no (pp. 235–236). Un mal rendimiento puede deberse a preferencia por el riesgo, sensibilidad a la recompensa, insensibilidad al castigo o problemas ejecutivos (p. 236): no hay una única causa. Conexión con la clase 3: la decisión bajo incertidumbre.</aside>
+      </section>
+
+      <section class="slide" data-block="Modelos" data-title="Sistema fluido y sistema cristalizado" data-source="Tirapu, Muñoz-Céspedes y Pelegrín, modelo integrador, citado en Tirapu y Luna-Lario (2008), pp. 237–238 (fig. 7)">
+        <h2>Un modelo integrador: rutina y novedad</h2>
+        <div class="split"><div><h3>Sistema cristalizado</h3><p>Acciones rutinarias, especificadas por el ambiente. Son rápidas, sobreaprendidas y no piden control consciente.</p></div><div><h3>Sistema fluido</h3><p>Acciones no rutinarias: no hay solución conocida, hay que decidir o inhibir una respuesta habitual. Ahí actúan el sistema supervisor, la memoria de trabajo y el marcador somático.</p></div></div>
+        <div class="prompt"><strong>Para conversar</strong><p>¿Qué actividad tuya pasó del sistema fluido al cristalizado? ¿Qué cambió en el camino?</p></div>
+        <aside class="speaker-notes" hidden>Figura 7 de Tirapu y Luna-Lario (2008, p. 238), que integra los modelos de Baddeley, Stuss y Benson, Norman y Shallice y Damasio. El modelo propone que el sistema supervisor y la memoria de trabajo generan posibilidades de acción, y que el marcador somático dirige la atención hacia una de ellas. Así se pasa por anticipación, selección de objetivos, planificación y monitorización (p. 238). Ejemplo para dar en clase: aprender a manejar (sistema fluido) y después manejar sin pensar (sistema cristalizado). Pregunta: ¿por qué una distracción interrumpe más a quien está aprendiendo?</aside>
+      </section>
+
+      <section class="slide" data-block="Modelos" data-title="Dos tipos de funciones" data-source="Ardila y Ostrosky-Solís (2008), pp. 1–2 y 5–6">
+        <h2>Dos tipos de funciones ejecutivas</h2>
+        <table><thead><tr><th scope="col">Rasgo</th><th scope="col">Metacognitivas</th><th scope="col">Emocionales</th></tr></thead><tbody><tr><th scope="row">Qué coordinan</th><td>Resolver problemas, planificar, formar conceptos, desarrollar estrategias y sostener la memoria de trabajo.</td><td>La cognición con la emoción y la motivación: satisfacer necesidades biológicas de forma socialmente aceptable.</td></tr><tr><th scope="row">Área principal</th><td>Prefrontal dorsolateral.</td><td>Orbitofrontal y medial.</td></tr><tr><th scope="row">Cómo se evalúan</th><td>Con las pruebas usuales: Wisconsin, Stroop, Torre de Hanoi.</td><td>Ninguna prueba de laboratorio se enfoca en ellas.</td></tr></tbody></table>
+        <p class="takeaway">Según Ardila y Ostrosky-Solís (2008), las pruebas usuales miden sobre todo el primer tipo. Los problemas cotidianos, con contenido emocional, exigen también el segundo.</p>
+        <aside class="speaker-notes" hidden>Los autores proponen dos habilidades prefrontales estrechamente relacionadas (Ardila y Ostrosky-Solís, 2008, p. 1): las metacognitivas, que dependen de áreas dorsolaterales, y las emocionales, que dependen de áreas orbitofrontales y mediales (pp. 4–5). Según su propuesta, las primeras dependen de instrumentos conceptuales como el lenguaje, y las segundas son resultado de la evolución biológica compartida con otros primates. Advertir que se trata de una propuesta de los autores, no de un consenso. Para discutir: ¿qué prueba de laboratorio incluye una emoción o una necesidad biológica?</aside>
+      </section>
+
+      <section class="slide" data-block="Modelos" data-title="¿Unidad o diversidad?" data-source="Miyake et al. (2000), citados en Ardila y Ostrosky-Solís (2008), p. 8; Tirapu y Luna-Lario (2008), p. 248; UF 2022, diap. 29–30">
+        <h2>¿Unidad o diversidad?</h2>
+        <div class="split"><div><h3>Unidad</h3><p>Todo el desempeño ejecutivo se explicaría por un proceso común. Se propuso la inhibición conductual (Barkley, 1997) o el razonamiento junto con la velocidad perceptual (Salthouse, 2005).</p></div><div><h3>Diversidad</h3><p>Son procesos independientes: las pruebas ejecutivas correlacionan de moderada a baja, y a veces sin significación estadística.</p></div></div>
+        <p class="takeaway">Miyake et al. (2000): "constructos separados pero moderadamente correlacionados". Tres componentes: cambio, actualización e inhibición.</p>
+        <aside class="speaker-notes" hidden>Miyake et al. (2000) estudiaron tres aspectos que suelen postularse como funciones ejecutivas (cambio, actualización e inhibición): son distinguibles, pero comparten algo en común (Ardila y Ostrosky-Solís, 2008, p. 8). Tirapu y Luna-Lario (2008, p. 248) describen el mismo modelo: alternancia entre sets, actualización y monitorización de la memoria de trabajo, e inhibición de respuestas predominantes. Las correlaciones moderadas indican a la vez unidad y diversidad. Ojo: el factor común no está identificado con certeza. Ardila y Ostrosky-Solís recuerdan que no es evidente cuál sería el factor unitario que satura todas las pruebas (p. 8).</aside>
+      </section>
+
+      <section class="slide" data-block="Modelos" data-title="¿Dominio general o contenido?" data-source="Ejemplo de la presentación UF 2022, diap. 31–33 (adaptado); Ardila y Ostrosky-Solís (2008), p. 4">
+        <h2>¿Son generales o dependen del contenido?</h2>
+        <div class="split"><div><h3>Dominio general</h3><p>Componentes universales, independientes de las demandas de cada tarea y situación.</p></div><div><h3>Dominios específicos</h3><p>Cada meta activa conocimientos, creencias, normas e intereses. Por eso las funciones no se separan de la tarea concreta.</p></div></div>
+        <div class="example"><p>Me sacaron el lugar para estacionar. ¿Qué hago?</p><p>Pesan también los contenidos: "tengo alarma en el auto", "no puedo dejarlo en medio del estacionamiento", "mañana mi lugar va a estar vacío".</p><p>Para conversar: ¿qué contenido cambiaría tu decisión? ¿Y si la otra persona tuviera otras normas?</p></div>
+        <aside class="speaker-notes" hidden>Ejemplo adaptado de la presentación UF 2022 (diap. 33): memoria de trabajo, flexibilidad e inhibición aparecen junto con conocimientos, normas y creencias. La pregunta de fondo es si las funciones ejecutivas son componentes generales, que se aplican igual a cualquier contenido, o si siempre llegan cargadas de contenido. Ardila y Ostrosky-Solís (2008, p. 4) sostienen que la vida cotidiana tiene contenido emocional y social, algo que las pruebas de laboratorio no tienen. Eso conecta con el bloque de evaluación.</aside>
+      </section>
+
+      <section class="slide divider" data-block="Actividades" data-title="Actividades"><p>Actividades</p><h2>Seis componentes,<br>seis tareas</h2><div class="divider-caption">Cada tarea pone a prueba un componente. Antes de la respuesta, anticipá cuál.</div>
+        <aside class="speaker-notes" hidden>Transición a la parte práctica. Las seis demostraciones son breves (Stroop, n-back, Torre de Hanoi, cartas de clasificación, TMT A/B y go/no-go) y se pueden hacer con poco tiempo. Si hace falta, se puede hacer sólo una de ellas en voz alta y comentar las demás.</aside>
+      </section>
+
+      <section class="slide compact" data-block="Actividades" data-title="Seis componentes y sus tareas" data-source="Tirapu y Luna-Lario (2008), pp. 239–242 y tabla de la p. 242">
+        <h2>Seis componentes del sistema supervisor</h2>
+        <table><thead><tr><th scope="col">Componente</th><th scope="col">Qué exige</th><th scope="col">Tarea clásica</th></tr></thead><tbody><tr><th scope="row">Codificación y mantenimiento</th><td>Retener información cuando los sistemas de repaso se saturan</td><td>Paradigma de Sternberg (de 3 a 9 letras)</td></tr><tr><th scope="row">Actualización</th><td>Decidir si un estímulo coincide con otro presentado n posiciones antes</td><td>n-back</td></tr><tr><th scope="row">Manipulación</th><td>Reordenar en voz alta números y letras</td><td>Letras y números de la escala de Wechsler</td></tr><tr><th scope="row">Ejecución dual</th><td>Sostener dos tareas a la vez</td><td>Dígitos y tachado de cuadros</td></tr><tr><th scope="row">Inhibición</th><td>Ignorar información irrelevante o una respuesta automática</td><td>Stroop; go/no-go</td></tr><tr><th scope="row">Alternancia cognitiva</th><td>Cambiar de criterio cuando la retroalimentación lo indica</td><td>Test de clasificación de cartas de Wisconsin</td></tr></tbody></table>
+        <aside class="speaker-notes" hidden>Protocolo de Tirapu y Luna-Lario (2008, pp. 239–242) para evaluar la memoria de trabajo y las funciones del sistema atencional supervisor. Aclarar que el bucle fonológico y la agenda visuoespacial no son procesos ejecutivos: son sistemas auxiliares que proveen información. "Tener buen bucle y buena agenda es condición necesaria, pero no suficiente" (p. 239). Sobre Sternberg: Tirapu sostiene que a partir de tres estímulos interviene el córtex prefrontal dorsolateral (p. 240); en la neuroimagen que citan, seis dígitos son el umbral para la activación (p. 245). La frontera depende de la tarea. Las demostraciones que siguen son Stroop, n-back, Torre de Hanoi, Wisconsin, TMT A/B y go/no-go.</aside>
+      </section>
+
+      <section class="slide compact" data-block="Actividades" data-title="Stroop: tinta contra palabra" data-source="Tirapu y Luna-Lario (2008), p. 240 (Stroop); demostración de elaboración didáctica">
+        <h2>Probemos: el test de Stroop</h2><p class="activity-time">En voz alta · Iniciá, leé de izquierda a derecha y pulsá "Terminé"</p>
+        <div class="stroop-cards">
+          <div class="stroop-card"><h3>A · Palabras en negro</h3><p class="stroop-task">Leé cada palabra.</p><ul class="stroop-words"><li>ROJO</li><li>AZUL</li><li>VERDE</li><li>AZUL</li><li>ROJO</li><li>VERDE</li></ul></div>
+          <div class="stroop-card"><h3>B · Símbolos de color</h3><p class="stroop-task">Decí el color de cada símbolo.</p><ul class="stroop-words"><li class="ink-red">XXX</li><li class="ink-blue">XXX</li><li class="ink-green">XXX</li><li class="ink-blue">XXX</li><li class="ink-green">XXX</li><li class="ink-red">XXX</li></ul></div>
+          <div class="stroop-card"><h3>C · Palabras en color</h3><p class="stroop-task">Decí el color de la tinta, no la palabra.</p><ul class="stroop-words"><li class="ink-green">ROJO</li><li class="ink-red">AZUL</li><li class="ink-blue">VERDE</li><li class="ink-green">AZUL</li><li class="ink-blue">ROJO</li><li class="ink-red">VERDE</li></ul></div>
+        </div>
+        <details class="answer"><summary>Qué se mide en la parte C</summary><p>Leer es una respuesta automática: la palabra se impone. Nombrar la tinta exige suprimir esa respuesta. Tirapu y Luna-Lario (2008, p. 240) describen el test como una medida de la capacidad para evitar respuestas automáticas y suprimir la interferencia de estímulos habituales.</p></details>
+        <aside class="speaker-notes" hidden>En pantalla: pulsar "Iniciar", leer y pulsar "Terminé". También se puede marcar cada estímulo: el último detiene el tiempo. Salir de la diapositiva cancela la medición. Al terminar A y C aparece la diferencia C − A. La demo sólo mide tiempos: si alguien se equivoca, conviene anotarlo aparte. La parte C reúne dos respuestas que compiten: leer la palabra y nombrar la tinta. Tirapu y Luna-Lario (2008, p. 240) describen la versión de Graff et al., con tres páginas de cinco columnas de 20 elementos; aquí se usan seis elementos por parte. Las palabras de la parte C están elegidas para que la palabra y la tinta no coincidan. Ninguna prueba de esta familia es específica para medir disfunción ejecutiva (Tirapu y Luna-Lario, 2008, p. 243).</aside>
+      </section>
+
+      <section class="slide compact" data-block="Actividades" data-title="Actualizar: n-back" data-source="Tirapu y Luna-Lario (2008), p. 240 (paradigma n-back y secuencia de ejemplo)">
+        <h2>Actualizar: ¿coincide con la de dos lugares antes?</h2><p class="activity-time">Individual, en voz alta · 1 minuto</p>
+        <ol class="sequence" data-letters="BHCRC" aria-label="Secuencia de letras"><li><span>1</span><b>B</b></li><li><span>2</span><b>H</b></li><li><span>3</span><b>C</b></li><li><span>4</span><b>R</b></li><li><span>5</span><b>C</b></li></ol>
+        <p class="question">¿En qué posiciones la letra coincide con la de dos lugares antes?</p>
+        <details class="answer"><summary>Mostrar la respuesta</summary><p>Sólo en la posición 5: la C coincide con la C de la posición 3. La C de la posición 3 se compara con la B de la posición 1, y la R de la posición 4 se compara con la H de la posición 2. En ninguno de esos casos coinciden.</p><p>Con tres posiciones de distancia (3-back) la tarea es más exigente: hay que actualizar la memoria en cada paso, no sólo repetir.</p></details>
+        <aside class="speaker-notes" hidden>"Ronda de memoria" presenta diez letras: 1,5 segundos de letra y 0,5 segundos de cruz de fijación (+). Desde la tercera se responde con F (coincide), J (no coincide) o botones. Se acepta una respuesta por letra, también durante su fijación; responder no adelanta la secuencia. Salir de la diapositiva, cambiar de pestaña o abrir un panel cancela la ronda. El resultado se muestra al final. Es una adaptación didáctica sin tiempos estandarizados. En el ejemplo visible se marca cada posición con un clic y "Revisar" compara con la regla, explicando cada error. "Otra secuencia" genera letras nuevas, siempre con al menos una coincidencia. Para la lectura en voz alta, leer a un ritmo de una letra por segundo. Advertir que no hay que memorizar las letras, sino recordar su posición relativa. Tirapu y Luna-Lario (2008, p. 240) presentan el n-back como paradigma de actualización: 1-back es de baja exigencia, 2-back de exigencia media y 3-back de exigencia alta. Las versiones verbales de la tarea se asocian con el parietal izquierdo y el prefrontal ventral y dorsolateral (p. 245). Pregunta: ¿qué cambia cuando la distancia pasa de dos a tres posiciones?</aside>
+      </section>
+
+      <section class="slide compact" data-block="Actividades" data-title="Planificar: la Torre de Hanoi" data-source="Tirapu y Luna-Lario (2008), p. 241 (protocolo de planificación); mínimo de movimientos por cálculo propio">
+        <h2>Probemos: la Torre de Hanoi</h2>
+        <p>Pasá los tres discos de A a C: de a uno, y sin apoyar un disco grande sobre uno chico.</p>
+        <div class="hanoi" data-discs="3"><div class="hanoi-board"><button type="button" class="hanoi-peg" data-peg="0" aria-label="Pivote A"><span class="peg-label">A</span></button><button type="button" class="hanoi-peg" data-peg="1" aria-label="Pivote B"><span class="peg-label">B</span></button><button type="button" class="hanoi-peg" data-peg="2" aria-label="Pivote C"><span class="peg-label">C</span></button></div><div class="hanoi-side"><p class="hanoi-status" aria-live="polite">Hacé clic en un pivote para tomar el disco de arriba.</p><p class="hanoi-count">Movimientos: <output>0</output></p><button type="button" class="hanoi-reset">Reiniciar</button><details class="answer"><summary>¿Cuántos movimientos hacen falta como mínimo?</summary><p>Siete. Con n discos, el mínimo es 2<sup>n</sup> − 1.</p></details></div></div>
+        <aside class="speaker-notes" hidden>Clic en un pivote toma el disco de arriba; clic en otro pivote lo deja. "Reiniciar" vuelve a la posición inicial. Tirapu y Luna-Lario (2008, p. 241) usan la torre de Hanoi como prueba de planificación, junto con el mapa del zoo de la BADS. La diferencia clave: el mapa del zoo tiene las instrucciones a la vista; en la torre hay que mantenerlas en línea. Es el mismo problema que vimos en la clase 3, ahora como medida de planificación. Si alguien lo resuelve en pocos movimientos, preguntar qué estrategia usó.</aside>
+      </section>
+
+      <section class="slide compact" data-block="Actividades" data-title="Cambiar de criterio" data-source="Tirapu y Luna-Lario (2008), p. 241 (test de clasificación de cartas de Wisconsin); cartas de elaboración didáctica">
+        <h2>Cambiar de criterio</h2><p class="activity-time">En parejas · 3 minutos</p>
+        <div class="wcst"><div class="wcst-keys"><h3>Cartas de referencia</h3><ul><li>1 triángulo rojo</li><li>2 círculos verdes</li><li>3 estrellas azules</li><li>4 cuadrados amarillos</li></ul></div><div class="wcst-card"><h3>Carta a clasificar</h3><p>2 triángulos rojos</p></div></div>
+        <p class="question">¿Con qué carta de referencia la emparejás? Justificá por qué.</p>
+        <details class="answer"><summary>Mostrar la respuesta</summary><p>Depende del criterio: por forma o por color, la carta 1; por número, la 2. Si la regla cambió y el docente dice "mal", seguir con el anterior es perseveración.</p></details>
+        <aside class="speaker-notes" hidden>En pantalla: la primera carta es 2 triángulos rojos. Cada respuesta recibe "Bien" o "Mal", sin revelar el criterio. Tras seis aciertos seguidos el criterio cambia sin aviso (en la prueba original, tras diez). Los errores que siguen el criterio anterior son perseverativos. El texto de "Mostrar la respuesta" muestra el criterio vigente: es para el docente, no para la clase. Observar si la persona sigue con el criterio anterior (perseveración) o si lo cambia y cuánto tarda. Tirapu y Luna-Lario (2008, p. 241) describen el test: el criterio cambia tras diez respuestas correctas y el examinador no revela la regla. El test mide sobre todo flexibilidad o alternancia; la inhibición aparece como tendencia perseverativa.</aside>
+      </section>
+
+      <section class="slide compact" data-block="Actividades" data-title="Alternar: TMT A/B" data-source="Sánchez-Cubillo et al. (2009), doi:10.1017/S1355617709090626; adaptación didáctica">
+        <h2>Un recorrido, dos formas de seguirlo</h2>
+        <p class="activity-time">TMT A/B · Arrastrá desde 1 y uní los círculos en orden. También podés hacer clic.</p>
+        <div class="tmt-demo">
+          <div class="tmt-board" aria-label="Puntos del recorrido"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="" /></svg></div>
+          <div class="tmt-side">
+            <h3 class="tmt-part">Parte A · Números</h3>
+            <p class="tmt-rule">1 → 2 → 3 → … → 12</p>
+            <div class="demo-controls"><button type="button" class="activity-button tmt-start">Iniciar A</button><button type="button" class="activity-button tmt-reset">Reiniciar todo</button></div>
+            <p class="tmt-count">Tiempo: <output>0,0 s</output> · Errores: <span>0</span></p>
+            <p class="tmt-status" aria-live="polite">Pulsá Iniciar para ver el recorrido.</p>
+            <div class="tmt-results" aria-live="polite"></div>
+          </div>
+        </div>
+        <p class="demo-caption">Demostración de 12 puntos por parte. Compará las demandas; los tiempos no son puntajes clínicos.</p>
+        <aside class="speaker-notes" hidden>Adaptación didáctica con trazado libre por arrastre de mouse o dedo; también acepta clics y teclado. No es una reproducción estandarizada del Trail Making Test. Empezar en 1, mantener presionado y pasar por cada círculo en orden. Se puede soltar y retomar desde el último correcto. Si se cruza un círculo fuera de orden, se cuenta un error y se descarta sólo el tramo aún no validado. A: 1 a 12. B: 1, A, 2, B hasta 6, F. El cronómetro comienza al mostrar los puntos. Un error no avanza el recorrido ni detiene el tiempo. Hay dos disposiciones de dificultad no equiparada; no interpretar B − A como una medida aislada del costo ejecutivo. Comparar búsqueda visual, manejo del dispositivo, mantenimiento de la secuencia y alternancia. Sánchez-Cubillo et al. (2009), https://pubmed.ncbi.nlm.nih.gov/19402930/, encontraron contribuciones visuoperceptuales en A y de memoria de trabajo y alternancia en B. Preguntar: ¿qué agregó B? Contrastar con las cartas: aquí la regla se conoce. Salir, cambiar de pestaña o abrir un panel cancela la parte en curso.</aside>
+      </section>
+
+      <section class="slide compact" data-block="Actividades" data-title="Inhibir: go/no-go" data-source="Paradigma go/no-go; PhenX, protocolo 530701; adaptación didáctica">
+        <h2>Responder… y poder frenar</h2>
+        <p class="activity-time">Go/no-go · Círculo: respondé. X: no respondas.</p>
+        <div class="gng-demo">
+          <p class="gng-progress">20 estímulos · 15 círculos y 5 X</p>
+          <div class="gng-stimulus" role="img" aria-label="Esperando el inicio">+</div>
+          <button type="button" class="activity-button gng-respond" disabled>Responder · Espacio</button>
+          <p class="gng-status" aria-live="polite">Respondé mientras se ve el círculo, con Espacio o el botón. Durante +, esperá.</p>
+          <div class="demo-controls"><button type="button" class="activity-button gng-start">Iniciar ronda</button><button type="button" class="activity-button gng-reset" disabled>Cancelar</button></div>
+          <div class="gng-results" aria-live="polite"></div>
+        </div>
+        <p class="demo-caption">700 ms de estímulo + 300 ms de fijación. Demostración didáctica, sin interpretación clínica.</p>
+        <aside class="speaker-notes" hidden>La respuesta frecuente a los círculos contrasta con la necesidad de retenerla ante X. Ronda de 20 ensayos: 15 go y 5 no-go, con tres go iniciales y orden aleatorio del resto. Una respuesta por ensayo; mantener Espacio presionado no genera nuevas respuestas. La ventana de respuesta dura 700 ms; la fijación dura 300 ms y no admite respuestas. Los botones permanecen habilitados tanto para go como para no-go, sin indicar la respuesta correcta. Al final se muestran respuestas go, omisiones, respuestas ante X (comisiones) y retenciones correctas. No interpretar un error individual como déficit de inhibición: también intervienen atención, comprensión y velocidad. Preguntar: ¿qué pasó después de varios círculos seguidos? Fuente conceptual: https://www.phenxtoolkit.org/protocols/view/530701. Estímulos, proporciones, duración y extensión elegidos para esta demostración, no para replicar ese protocolo. Al salir, cambiar de pestaña o abrir un panel se cancela la ronda.</aside>
+      </section>
+
+      <section class="slide compact" data-block="Actividades" data-title="Viñetas: estrategias de solución" data-source="Postigo Angón (2014), cap. 9, pp. 227–237 (estrategias generales de solución de problemas); casos de elaboración didáctica">
+        <h2>Viñetas: ¿qué estrategia usa cada persona?</h2><p class="activity-time">En grupos · 5 minutos</p>
+        <div class="strategy-cases"></div>
+        <aside class="speaker-notes" hidden>Cinco de las estrategias generales que describe Postigo Angón (2014, cap. 9): ensayo y error (p. 228), medios-fines (pp. 231–232), submetas (p. 233), búsqueda hacia atrás (p. 234) y analogías (p. 235). Los casos son de elaboración didáctica; no son ejemplos del libro. Procedimiento: leer el caso en voz alta, que cada grupo elija una estrategia y la justifique antes de mirar la explicación. Al elegir, aparece por qué sirve o no. Puntos para discutir: la búsqueda hacia atrás exige una meta especificada y única (p. 234); las estrategias no son excluyentes y pueden combinarse (p. 237); en las analogías, las personas suelen no detectar la semejanza entre problemas (p. 235). El caso de Lucía tiene respuesta numérica: 320 pesos el primer día. La búsqueda aleatoria (p. 227) y la búsqueda sistemática (pp. 228–230) quedan fuera de la diapositiva; si alguien las menciona, sirven de contraste. Para imprimir, la diapositiva muestra la lista completa de casos con su estrategia.</aside>
+      </section>
+
+      <section class="slide definition" data-block="Evaluación" data-title="Evaluar sin ver" data-source="Tirapu y Luna-Lario (2008), pp. 242–243; Eslinger y Damasio (1985) y Anderson et al., citados allí">
+        <h2>Evaluar lo que no se ve</h2><p class="author-line">Tirapu y Luna-Lario (2008), p. 242</p><p class="large-statement">Ninguno de estos test ha probado ser específico para medir disfunciones del sistema ejecutivo.</p>
+        <div class="definition-bottom"><p>Sí sirven para detectar disfunción frontal: el WCST, el Stroop, el Trail Making Test, la fluidez verbal y las torres.</p><p>Algunos pacientes frontales los resuelven bien, y algunos pacientes con lesiones fuera del lóbulo frontal los resuelven mal.</p></div>
+        <aside class="speaker-notes" hidden>Eslinger y Damasio (1985) describieron el caso E.V.R.: tras lesiones prefrontales bilaterales, algunas pruebas neuropsicológicas quedaban dentro de los límites normales (Tirapu y Luna-Lario, 2008, p. 243). Anderson et al. examinaron 91 pacientes con lesiones focales (49 frontales, 24 no frontales y 18 difusas) y no hallaron diferencias significativas entre grupos en el WCST (p. 243). Los autores concluyen que cada paciente debe tratarse como un caso único (p. 243). Pregunta para la clase: si el test no separa a los grupos, ¿qué está midiendo?</aside>
+      </section>
+
+      <section class="slide" data-block="Evaluación" data-title="Laboratorio y vida cotidiana" data-source="Acker (1990), citado en Tirapu y Luna-Lario (2008), p. 243">
+        <h2>Laboratorio y vida cotidiana</h2>
+        <table><thead><tr><th scope="col">Aspecto</th><th scope="col">Situación de test</th><th scope="col">Vida cotidiana</th></tr></thead><tbody><tr><th scope="row">Estructura</th><td>La da el examinador, con tareas concretas</td><td>Tareas no estructuradas y espontáneas</td></tr><tr><th scope="row">Motivación</th><td>La aporta el examinador</td><td>Hace falta automotivarse</td></tr><tr><th scope="row">Planificación</th><td>La hace el examinador</td><td>Es individual</td></tr><tr><th scope="row">Estímulo</th><td>Persiste</td><td>No persiste</td></tr><tr><th scope="row">Fracaso</th><td>No se enfatiza</td><td>Existe temor al fracaso</td></tr><tr><th scope="row">Entorno</th><td>Protegido, no punitivo, sin competencia</td><td>Menos protegido, con competencia</td></tr></tbody></table>
+        <aside class="speaker-notes" hidden>Acker (1990), citado por Tirapu y Luna-Lario (2008, p. 243), compara la situación de test con la vida diaria. Pedir a la clase que nombre una tarea de su semana con las características de la columna derecha. Tirapu y Luna-Lario (2008, p. 243) concluyen que la validez ecológica exige una relación "funcional y predictiva" entre el desempeño en el test y la conducta real. Además, los resultados pueden generar falsas expectativas sobre el funcionamiento cotidiano.</aside>
+      </section>
+
+      <section class="slide" data-block="Evaluación" data-title="Medir más, y con más de una fuente" data-source="Tirapu y Luna-Lario (2008), p. 244; Cripe (1996), citado allí; elaboración didáctica en la última nota">
+        <h2>Medir más, y con más de una fuente</h2>
+        <div class="theory-rows"><div><h3>Integrar</h3><p>Los resultados de los test son elementos complementarios: hay que ubicarlos en un marco comprensivo que explique los procesos alterados.</p></div><div><h3>Preguntar a otros</h3><p>Cuestionarios de funcionamiento, como la escala de Iowa modificada o la Neurobehavioral Rating Scale. El autoinforme también es limitado, porque la autoconciencia es una de las funciones que se alteran.</p></div><div><h3>Desconfiar de la cifra</h3><p>Cripe habla del "mind data problem": las puntuaciones son representaciones simbólicas y reducidas de un sistema dinámico.</p></div></div>
+        <aside class="speaker-notes" hidden>Tirapu y Luna-Lario (2008, p. 244) recomiendan integrar los datos de los test en un marco comprensivo, usar cuestionarios de funcionamiento y tener cuidado con los autoinformes, porque la limitada autoconciencia afecta su fiabilidad. Cripe (1996) sostiene que medir realidades complejas y en movimiento es más difícil, y que cuanta más información se integra, mejor se entiende (p. 244). Pregunta de elaboración didáctica: ¿qué sabríamos de un estudiante si sólo tuviéramos la nota de un parcial? La analogía sirve para discutir la evaluación en la vida real.</aside>
+      </section>
+
+      <section class="slide" data-block="Neuropsicología clínica" data-title="Phineas Gage" data-source="Harlow, citado en Ardila y Ostrosky-Solís (2008), p. 4; Tirapu y Luna-Lario (2008), p. 254">
+        <h2>Phineas Gage: un caso que conviene matizar</h2>
+        <div class="split"><div><h3>Lo que suele contarse</h3><p>Un capataz de ferrocarril sufrió el paso de una barra de metal por la región frontal. Sobrevivió y, según Harlow, quedó "profano, irascible e irresponsable".</p></div><div><h3>Lo que conviene matizar</h3><p>Sus alteraciones eran conductuales y emocionales. No se documentaron alteraciones puramente cognitivas, en parte por la falta de instrumentos adecuados.</p></div></div>
+        <p class="takeaway">El caso muestra la dimensión emocional y social de las funciones frontales, no sólo la resolución de problemas.</p>
+        <aside class="speaker-notes" hidden>Ardila y Ostrosky-Solís (2008, p. 4) sostienen que el caso suele citarse como ejemplo típico de alteración ejecutiva, pero que sus trastornos se ubicaban en el nivel cognitivo-emocional. El registro es de conducta porque faltaban pruebas adecuadas. Fecha: Ardila y Ostrosky-Solís citan a Harlow (1868); Tirapu y Luna-Lario (2008, p. 254) sitúan la descripción en 1848. Antes de dar una fecha en clase, verificarla en la fuente original.</aside>
+      </section>
+
+      <section class="slide" data-block="Neuropsicología clínica" data-title="Dos síndromes prefrontales" data-source="Ardila y Ostrosky-Solís (2008), p. 6 (con Eslinger y Damasio, 1985; Luria, 1969; Cummings, 1993; Laiacona et al., 1989, citados allí)">
+        <h2>Dos síndromes, dos perfiles</h2>
+        <div class="split"><div><h3>Orbitofrontal y medial</h3><p>Desinhibición, conductas inapropiadas, irritabilidad y poco tacto. Dificultad para responder a las claves sociales. En lesiones mediales, apatía o abulia.</p></div><div><h3>Dorsolateral</h3><p>Dificultad para organizar una respuesta ante un estímulo complejo o novedoso. Perseveraciones, conductas centradas en el estímulo, ecopraxia y ecolalia.</p></div></div>
+        <p class="takeaway">Según Ardila y Ostrosky-Solís (2008), las dos variantes pueden dar cuadros clínicos muy distintos, según dónde esté la lesión.</p>
+        <aside class="speaker-notes" hidden>Ardila y Ostrosky-Solís (2008, p. 6): el síndrome orbitofrontal se asocia con la desinhibición y con la "sociopatía adquirida" (Eslinger y Damasio, 1985). Laiacona et al. (1989) señalan que estos pacientes no tienen dificultades en tareas como la clasificación de tarjetas: es un dato para discutir con el WCST de la diapositiva 24. Cummings (1993) considera que el circuito dorsolateral es el más importante de las funciones ejecutivas. Ojo: la dicotomía es una propuesta de los autores. Tirapu y Luna-Lario (2008, pp. 223–224) describen además el síndrome disejecutivo, que es la diapositiva siguiente.</aside>
+      </section>
+
+      <section class="slide compact" data-block="Neuropsicología clínica" data-title="Síndrome disejecutivo: viñetas" data-source="Elaboración didáctica a partir de Tirapu y Luna-Lario (2008), pp. 223–224 (síndrome disejecutivo)">
+        <h2>Viñetas: ¿qué función parece comprometida?</h2><p class="activity-time">En grupos de tres · 4 minutos</p>
+        <ol class="activity-questions"><li>Empieza un trabajo, lo deja a mitad y no lo nota hasta que alguien se lo señala.</li><li>Sigue clasificando las cartas por color, aunque ya le dijeron "mal" varias veces.</li><li>En una discusión dice lo primero que se le ocurre y después no entiende por qué se enojaron.</li></ol>
+        <p class="print-only"><strong>Claves:</strong> 1, monitorización y finalización (p. 223); 2, alternancia, con perseveración (p. 234); 3, inhibición y anticipación de consecuencias (p. 224). Son viñetas para discutir, no diagnósticos.</p>
+        <aside class="speaker-notes" hidden>Las viñetas son de elaboración didáctica. Se inspiran en los cuatro rasgos del síndrome disejecutivo que describen Tirapu y Luna-Lario (2008, pp. 223–224): dificultad para centrarse en la tarea y finalizarla sin control externo; dificultad para establecer nuevos repertorios y estrategias; falta de flexibilidad, con poca productividad y creatividad; e impulsividad con dificultad para anticipar consecuencias. En pantalla, cada grupo elige una función y el texto explica por qué sirve o no. Después, pedir que justifiquen su elección y digan qué información adicional pedirían, por ejemplo, otras tareas o un cuestionario de funcionamiento diario.</aside>
+      </section>
+
+
+    </div>
+  </main>
+
+  <nav class="controls" aria-label="Controles de la presentación">
+    <button id="index-button" type="button" title="Índice (I)" aria-haspopup="dialog">Índice</button>
+    <span id="current-block" class="current-block"></span>
+    <div class="slide-navigation"><button id="previous" type="button" aria-label="Diapositiva anterior" title="Anterior (←)">←</button><output id="counter" aria-live="polite" aria-atomic="true">1 / 33</output><button id="next" type="button" aria-label="Diapositiva siguiente" title="Siguiente (→)">→</button></div>
+    <button id="notes-button" type="button" title="Notas docentes (N)" aria-haspopup="dialog">Notas</button>
+    <button id="print-button" type="button" title="Guardar o imprimir las diapositivas">PDF / imprimir</button>
+    <button id="fullscreen" type="button" title="Pantalla completa (F)">Pantalla completa</button>
+    <button id="help-button" type="button" aria-label="Ayuda y atajos" aria-haspopup="dialog">?</button>
+  </nav>
+  <div class="progress" aria-hidden="true"><div id="progress-bar"></div></div>
+  <dialog id="index-dialog" aria-labelledby="index-title"><div class="dialog-heading"><h2 id="index-title">Recorrido de la clase</h2><button type="button" class="close-dialog" aria-label="Cerrar índice">×</button></div><div id="slide-index"></div></dialog>
+  <dialog id="notes-dialog" aria-labelledby="notes-title"><div class="dialog-heading"><h2 id="notes-title">Notas docentes</h2><button type="button" class="close-dialog" aria-label="Cerrar notas">×</button></div><h3 id="notes-slide-title"></h3><p id="notes-content"></p></dialog>
+  <dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-heading"><h2 id="help-title">Cómo presentar</h2><button type="button" class="close-dialog" aria-label="Cerrar ayuda">×</button></div><dl class="shortcuts"><dt>← / →</dt><dd>Anterior / siguiente</dd><dt>Espacio / Page Down</dt><dd>Siguiente</dd><dt>Page Up</dt><dd>Anterior</dd><dt>Inicio / Fin</dt><dd>Primera / última diapositiva</dd><dt>I</dt><dd>Abrir el índice</dd><dt>N</dt><dd>Mostrar notas docentes</dd><dt>F</dt><dd>Activar o salir de pantalla completa</dd><dt>Esc</dt><dd>Cerrar el panel abierto</dd></dl><p>En el celular, usá los botones o deslizá hacia los lados. Para imprimir todas las diapositivas, usá la opción de impresión del navegador en orientación horizontal.</p></dialog>
+  <noscript><p class="no-script">JavaScript está desactivado: podés leer todas las diapositivas desplazándote por la página.</p></noscript>
+</body>
+</html>
